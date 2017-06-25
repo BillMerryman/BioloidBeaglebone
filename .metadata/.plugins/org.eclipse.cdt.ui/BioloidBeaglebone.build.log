@@ -1,0 +1,74 @@
+12:47:55 **** Build of configuration Default for project BioloidBeaglebone ****
+make all 
+make TARGET_MODE=Release -C PRU_0
+make[1]: Entering directory `D:/Programming/Robot/Bioloid/BioloidBeagleBone/BioloidBeaglebone/PRU_0'
+Release
+C:/ti/AM335X_StarterWare_02_00_01_01/PRUCodeGenerationTools/bin/clpru \
+	--silicon_version=3 --c99 --keep_asm -o3 --opt_for_speed=5 --src_interlist \
+	-IC:/ti/AM335X_StarterWare_02_00_01_01/include -IC:/ti/AM335X_StarterWare_02_00_01_01/include/hw -IC:/ti/AM335X_StarterWare_02_00_01_01/include/armv7a/am335x -IC:/ti/AM335X_StarterWare_02_00_01_01/PRUCodeGenerationTools/include -IC:/ti/AM335X_StarterWare_02_00_01_01/PRUCodeGenerationTools/lib \
+	main.c uart.c clock.c dynamixels.c AX12.c AXS1.c motion.c \
+	--define=Release \
+	-z AM3359_PRU.cmd \
+	-o Release/PRU_0.out \
+	-m Release/PRU_0.map
+[main.c]
+[uart.c]
+[clock.c]
+[dynamixels.c]
+[AX12.c]
+"AX12.c", line 320: warning: arithmetic on pointer to void or function type
+[AXS1.c]
+"AXS1.c", line 433: warning: arithmetic on pointer to void or function type
+[motion.c]
+<Linking>
+C:/ti/AM335X_StarterWare_02_00_01_01/PRUCodeGenerationTools/bin/hexpru bin.cmd Release/PRU_0.out
+Translating to Binary format...
+   "Release/PRU_0.out" .text:_c_int00* ==> .text:_c_int00*
+   "Release/PRU_0.out" .text ==> .text
+   "Release/PRU_0.out" .rodata ==> .rodata
+   "Release/PRU_0.out" .data ==> .data
+C:/ti/AM335X_StarterWare_02_00_01_01/tools/bintoc/bintocwitharrayname.exe Release/text_0.bin Release/text_0.h text_0
+C:/ti/AM335X_StarterWare_02_00_01_01/tools/bintoc/bintocwitharrayname.exe Release/data_0.bin Release/data_0.h data_0
+make[1]: Leaving directory `D:/Programming/Robot/Bioloid/BioloidBeagleBone/BioloidBeaglebone/PRU_0'
+make TARGET_MODE=Release -C PRU_1
+make[1]: Entering directory `D:/Programming/Robot/Bioloid/BioloidBeagleBone/BioloidBeaglebone/PRU_1'
+Release
+C:/ti/AM335X_StarterWare_02_00_01_01/PRUCodeGenerationTools/bin/clpru \
+	--silicon_version=3 --c99 --keep_asm -o0 --opt_for_speed=5 --src_interlist \
+	-IC:/ti/AM335X_StarterWare_02_00_01_01/include -IC:/ti/AM335X_StarterWare_02_00_01_01/include/hw -IC:/ti/AM335X_StarterWare_02_00_01_01/include/armv7a/am335x -IC:/ti/AM335X_StarterWare_02_00_01_01/PRUCodeGenerationTools/include -IC:/ti/AM335X_StarterWare_02_00_01_01/PRUCodeGenerationTools/lib \
+	main.c  \
+	--define=Release \
+	-z AM3359_PRU.cmd \
+	-o Release/PRU_1.out \
+	-m Release/PRU_1.map
+<Linking>
+warning: section ".TI.noinit" cannot be noinit in RAM model
+C:/ti/AM335X_StarterWare_02_00_01_01/PRUCodeGenerationTools/bin/hexpru bin.cmd Release/PRU_1.out
+Translating to Binary format...
+   "Release/PRU_1.out" .text:_c_int00* ==> .text:_c_int00*
+   "Release/PRU_1.out" .text ==> .text
+make[1]: Leaving directory `D:/Programming/Robot/Bioloid/BioloidBeagleBone/BioloidBeaglebone/PRU_1'
+. 
+---COMPILE---  main.c
+C:\gcc-linaro-arm-linux-gnueabihf\gcc-linaro-arm-linux-gnueabihf-4.8-2013.09_win32\bin\arm-linux-gnueabihf-gcc.exe -c -o main.o main.c -marm -O0  -g  -I.     -I.\OpenCV\include -I.\OpenCV\include\opencv -I.\OpenCV\include\opencv2 
+main.c: In function 'main':
+main.c:60:4: warning: incompatible implicit declaration of built-in function 'sprintf' [enabled by default]
+    sprintf(outputMessage, "pos: %d, %d", position.x, position.y);
+    ^
+. 
+---COMPILE---  image.c
+C:\gcc-linaro-arm-linux-gnueabihf\gcc-linaro-arm-linux-gnueabihf-4.8-2013.09_win32\bin\arm-linux-gnueabihf-gcc.exe -c -o image.o image.c -marm -O0  -g  -I.     -I.\OpenCV\include -I.\OpenCV\include\opencv -I.\OpenCV\include\opencv2 
+. 
+---COMPILE---  pru.c
+C:\gcc-linaro-arm-linux-gnueabihf\gcc-linaro-arm-linux-gnueabihf-4.8-2013.09_win32\bin\arm-linux-gnueabihf-gcc.exe -c -o pru.o pru.c -marm -O0  -g  -I.     -I.\OpenCV\include -I.\OpenCV\include\opencv -I.\OpenCV\include\opencv2 
+. 
+---COMPILE---  prussdrv.c
+C:\gcc-linaro-arm-linux-gnueabihf\gcc-linaro-arm-linux-gnueabihf-4.8-2013.09_win32\bin\arm-linux-gnueabihf-gcc.exe -c -o prussdrv.o prussdrv.c -marm -O0  -g  -I.     -I.\OpenCV\include -I.\OpenCV\include\opencv -I.\OpenCV\include\opencv2 
+. 
+---LINK--- 
+C:\gcc-linaro-arm-linux-gnueabihf\gcc-linaro-arm-linux-gnueabihf-4.8-2013.09_win32\bin\arm-linux-gnueabihf-g++.exe -o BioloidBeaglebone main.o image.o pru.o prussdrv.o -marm -O0  -g  -I.     -L.\OpenCV\lib  -lopencv_shape -lopencv_stitching -lopencv_objdetect -lopencv_superres -lopencv_videostab -lopencv_calib3d -lopencv_features2d -lopencv_highgui -lopencv_videoio -lopencv_imgcodecs -lopencv_video -lopencv_photo -lopencv_ml -lopencv_imgproc -lopencv_flann -lopencv_core -lopencv_hal  -lpthread
+. 
+---SUCCESS---  BioloidBeaglebone
+
+12:47:58 Build Finished (took 2s.891ms)
+

@@ -1,0 +1,1156 @@
+!SESSION 2017-06-24 12:15:22.966 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.7.0_40
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -clean
+
+!ENTRY org.eclipse.osgi 4 0 2017-06-24 12:15:24.500
+!MESSAGE The -clean (osgi.clean) option was not successful. Unable to clean the storage area: C:\Eclipse Kepler\configuration\org.eclipse.osgi
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-06-24 12:16:21.475
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-06-24 12:16:22.376
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Bill'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-06-24 12:17:41.636
+!MESSAGE Indexed 'BioloidBeaglebone' (12 sources, 322 headers) in 14.44 sec: 53,611 declarations; 93,325 references; 171 unresolved inclusions; 4,766 syntax errors; 37,952 unresolved names (20.53%)
+
+!ENTRY org.eclipse.jface 2 0 2017-06-24 12:21:13.380
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:21:13.380
+!MESSAGE A conflict occurred for ALT+CTRL+I:
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@25fd0492,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@25fd0492,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:21:13.380
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@63720ba,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@63720ba,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@d459686,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:21:13.380
+!MESSAGE A conflict occurred for F4:
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@539d3e38,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@539d3e38,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@785ff96a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:21:13.380
+!MESSAGE A conflict occurred for F3:
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@64efdbe3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@64efdbe3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.editor,Open Declaration,
+		Open an editor on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3f4d47da,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:21:13.380
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6aa859ad,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6aa859ad,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5297a38f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:21:13.380
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@61732ba5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@61732ba5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,Declaration in Workspace,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@50368f9e,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:21:13.380
+!MESSAGE A conflict occurred for CTRL+SHIFT+G:
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2e0ef736,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2e0ef736,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,References in Workspace,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@588811d9,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:21:13.380
+!MESSAGE A conflict occurred for ALT+CTRL+H:
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Open the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4d4beaf7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Open the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4d4beaf7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@332f25c6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:21:13.380
+!MESSAGE A conflict occurred for CTRL+SHIFT+H:
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5c59046a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5c59046a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5830fa83,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2017-06-24 12:35:52.939 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.7.0_40
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -clean
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-06-24 12:36:08.328
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-06-24 12:36:08.333
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Bill'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.cdt.launch.remote 4 150 2017-06-24 12:42:48.708
+!MESSAGE Error during file upload.
+!STACK 0
+org.eclipse.rse.services.clientserver.messages.SystemOperationFailedException: Failed to connect sshd on "192.168.2.150:22"
+	at org.eclipse.rse.internal.connectorservice.ssh.SshConnectorService.internalConnect(SshConnectorService.java:197)
+	at org.eclipse.rse.core.subsystems.AbstractConnectorService$1.run(AbstractConnectorService.java:500)
+	at org.eclipse.rse.core.subsystems.AbstractConnectorService$SafeRunner.run(AbstractConnectorService.java:444)
+	at org.eclipse.rse.core.subsystems.AbstractConnectorService.connect(AbstractConnectorService.java:506)
+	at org.eclipse.rse.core.subsystems.SubSystem.connect(SubSystem.java:2545)
+	at org.eclipse.cdt.launch.remote.RSEHelper.getConnectedRemoteFileService(RSEHelper.java:72)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:193)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.launch.remote 4 150 2017-06-24 12:42:48.734
+!MESSAGE Failed to connect sshd on "192.168.2.150:22"
+!STACK 0
+org.eclipse.rse.services.clientserver.messages.SystemOperationFailedException: Failed to connect sshd on "192.168.2.150:22"
+	at org.eclipse.rse.internal.connectorservice.ssh.SshConnectorService.internalConnect(SshConnectorService.java:197)
+	at org.eclipse.rse.core.subsystems.AbstractConnectorService$1.run(AbstractConnectorService.java:500)
+	at org.eclipse.rse.core.subsystems.AbstractConnectorService$SafeRunner.run(AbstractConnectorService.java:444)
+	at org.eclipse.rse.core.subsystems.AbstractConnectorService.connect(AbstractConnectorService.java:506)
+	at org.eclipse.rse.core.subsystems.SubSystem.connect(SubSystem.java:2545)
+	at org.eclipse.cdt.launch.remote.RSEHelper.getConnectedRemoteFileService(RSEHelper.java:72)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:193)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.572
+!MESSAGE NLS unused message: DebuggerTab.interfaceGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.576
+!MESSAGE NLS unused message: DebuggerTab.interface_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.580
+!MESSAGE NLS unused message: DebuggerTab.interfaceJtag_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.586
+!MESSAGE NLS unused message: DebuggerTab.interfaceSWD_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.590
+!MESSAGE NLS unused message: DebuggerTab.interface_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.594
+!MESSAGE NLS unused message: DebuggerTab.noReset_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.598
+!MESSAGE NLS unused message: DebuggerTab.noReset_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.602
+!MESSAGE NLS unused message: DebuggerTab.deviceGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.605
+!MESSAGE NLS unused message: DebuggerTab.deviceName_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.609
+!MESSAGE NLS unused message: DebuggerTab.deviceName_Link in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.613
+!MESSAGE NLS unused message: DebuggerTab.deviceName_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.617
+!MESSAGE NLS unused message: DebuggerTab.endianness_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.621
+!MESSAGE NLS unused message: DebuggerTab.endianness_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.624
+!MESSAGE NLS unused message: DebuggerTab.endiannesslittle_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.628
+!MESSAGE NLS unused message: DebuggerTab.endiannessBig_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.632
+!MESSAGE NLS unused message: DebuggerTab.gdbServerGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.636
+!MESSAGE NLS unused message: DebuggerTab.doStartGdbServer_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.640
+!MESSAGE NLS unused message: DebuggerTab.doStartGdbServer_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.643
+!MESSAGE NLS unused message: DebuggerTab.gdbServerExecutable_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.647
+!MESSAGE NLS unused message: DebuggerTab.gdbServerExecutable_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.650
+!MESSAGE NLS unused message: DebuggerTab.gdbServerExecutableBrowse in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.654
+!MESSAGE NLS unused message: DebuggerTab.gdbServerExecutableBrowse_Title in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.659
+!MESSAGE NLS unused message: DebuggerTab.gdbServerExecutableVariable in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.662
+!MESSAGE NLS unused message: DebuggerTab.gdbServerConnection_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.667
+!MESSAGE NLS unused message: DebuggerTab.gdbServerConnection_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.671
+!MESSAGE NLS unused message: DebuggerTab.connectionUsb_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.674
+!MESSAGE NLS unused message: DebuggerTab.connectionTcp_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.678
+!MESSAGE NLS unused message: DebuggerTab.connectionAfter_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.682
+!MESSAGE NLS unused message: DebuggerTab.gdbServerSpeed_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.686
+!MESSAGE NLS unused message: DebuggerTab.gdbServerSpeed_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.690
+!MESSAGE NLS unused message: DebuggerTab.gdbServerSpeedAuto_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.693
+!MESSAGE NLS unused message: DebuggerTab.gdbServerSpeedAdaptive_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.697
+!MESSAGE NLS unused message: DebuggerTab.gdbServerSpeedFixed_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.701
+!MESSAGE NLS unused message: DebuggerTab.gdbServerSpeedFixedUnit_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.704
+!MESSAGE NLS unused message: DebuggerTab.gdbServerGdbPort_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.708
+!MESSAGE NLS unused message: DebuggerTab.gdbServerGdbPort_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.712
+!MESSAGE NLS unused message: DebuggerTab.gdbServerSwoPort_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.715
+!MESSAGE NLS unused message: DebuggerTab.gdbServerSwoPort_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.719
+!MESSAGE NLS unused message: DebuggerTab.gdbServerTelnetPort_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.723
+!MESSAGE NLS unused message: DebuggerTab.gdbServerTelnetPort_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.726
+!MESSAGE NLS unused message: DebuggerTab.gdbServerVerifyDownload_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.730
+!MESSAGE NLS unused message: DebuggerTab.gdbServerVerifyDownload_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.733
+!MESSAGE NLS unused message: DebuggerTab.gdbServerInitRegs_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.737
+!MESSAGE NLS unused message: DebuggerTab.gdbServerInitRegs_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.741
+!MESSAGE NLS unused message: DebuggerTab.gdbServerLocalOnly_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.744
+!MESSAGE NLS unused message: DebuggerTab.gdbServerLocalOnly_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.748
+!MESSAGE NLS unused message: DebuggerTab.gdbServerSilent_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.784
+!MESSAGE NLS unused message: DebuggerTab.gdbServerSilent_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.788
+!MESSAGE NLS unused message: DebuggerTab.gdbServerLog_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.792
+!MESSAGE NLS unused message: DebuggerTab.gdbServerLogBrowse_Button in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.796
+!MESSAGE NLS unused message: DebuggerTab.gdbServerLogBrowse_Title in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.799
+!MESSAGE NLS unused message: DebuggerTab.gdbServerOther_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.803
+!MESSAGE NLS unused message: DebuggerTab.gdbServerAllocateConsole_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.807
+!MESSAGE NLS unused message: DebuggerTab.gdbServerAllocateConsole_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.810
+!MESSAGE NLS unused message: DebuggerTab.gdbServerAllocateSemihostingConsole_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.814
+!MESSAGE NLS unused message: DebuggerTab.gdbServerAllocateSemihostingConsole_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.817
+!MESSAGE NLS unused message: DebuggerTab.gdbSetupGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.821
+!MESSAGE NLS unused message: DebuggerTab.gdbCommand_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.825
+!MESSAGE NLS unused message: DebuggerTab.gdbCommand_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.828
+!MESSAGE NLS unused message: DebuggerTab.gdbCommandBrowse in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.832
+!MESSAGE NLS unused message: DebuggerTab.gdbCommandBrowse_Title in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.836
+!MESSAGE NLS unused message: DebuggerTab.gdbCommandVariable in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.839
+!MESSAGE NLS unused message: DebuggerTab.gdbOtherOptions_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.843
+!MESSAGE NLS unused message: DebuggerTab.gdbOtherOptions_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.846
+!MESSAGE NLS unused message: DebuggerTab.gdbOtherCommands_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.850
+!MESSAGE NLS unused message: DebuggerTab.gdbOtherCommands_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.854
+!MESSAGE NLS unused message: DebuggerTab.remoteGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.857
+!MESSAGE NLS unused message: DebuggerTab.ipAddressLabel in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.862
+!MESSAGE NLS unused message: DebuggerTab.portNumberLabel in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.865
+!MESSAGE NLS unused message: DebuggerTab.update_thread_list_on_suspend_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.869
+!MESSAGE NLS unused message: DebuggerTab.update_thread_list_on_suspend_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.873
+!MESSAGE NLS unused message: DebuggerTab.restoreDefaults_Link in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.876
+!MESSAGE NLS unused message: DebuggerTab.restoreDefaults_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.879
+!MESSAGE NLS unused message: StartupTab.initGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.883
+!MESSAGE NLS unused message: StartupTab.doFirstReset_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.887
+!MESSAGE NLS unused message: StartupTab.doFirstReset_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.890
+!MESSAGE NLS unused message: StartupTab.firstResetType_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.894
+!MESSAGE NLS unused message: StartupTab.firstResetType_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.898
+!MESSAGE NLS unused message: StartupTab.firstResetSpeed_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.901
+!MESSAGE NLS unused message: StartupTab.firstResetSpeed_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.905
+!MESSAGE NLS unused message: StartupTab.firstResetSpeedUnit_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.909
+!MESSAGE NLS unused message: StartupTab.interfaceSpeed_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.912
+!MESSAGE NLS unused message: StartupTab.interfaceSpeed_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.916
+!MESSAGE NLS unused message: StartupTab.interfaceSpeedAuto_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.920
+!MESSAGE NLS unused message: StartupTab.interfaceSpeedAdaptive_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.923
+!MESSAGE NLS unused message: StartupTab.interfaceSpeedFixed_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.927
+!MESSAGE NLS unused message: StartupTab.interfaceSpeedFixedUnit_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.931
+!MESSAGE NLS unused message: StartupTab.enableFlashBreakpoints_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.934
+!MESSAGE NLS unused message: StartupTab.enableFlashBreakpoints_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.938
+!MESSAGE NLS unused message: StartupTab.initCommands_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.942
+!MESSAGE NLS unused message: StartupTab.enableSemihosting_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.946
+!MESSAGE NLS unused message: StartupTab.enableSemihosting_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.949
+!MESSAGE NLS unused message: StartupTab.enableSemihostingRouted_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.954
+!MESSAGE NLS unused message: StartupTab.enableSemihostingRouted_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.957
+!MESSAGE NLS unused message: StartupTab.semihostingTelnet_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.961
+!MESSAGE NLS unused message: StartupTab.semihostingTelnet_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.965
+!MESSAGE NLS unused message: StartupTab.semihostingGdbClient_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.968
+!MESSAGE NLS unused message: StartupTab.semihostingGdbClient_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.972
+!MESSAGE NLS unused message: StartupTab.enableSwo_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.976
+!MESSAGE NLS unused message: StartupTab.enableSwo_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.980
+!MESSAGE NLS unused message: StartupTab.swoEnableTargetCpuFreq_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.983
+!MESSAGE NLS unused message: StartupTab.swoEnableTargetCpuFreq_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.987
+!MESSAGE NLS unused message: StartupTab.swoEnableTargetCpuFreqUnit_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.991
+!MESSAGE NLS unused message: StartupTab.swoEnableTargetSwoFreq_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.994
+!MESSAGE NLS unused message: StartupTab.swoEnableTargetSwoFreq_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:09.998
+!MESSAGE NLS unused message: StartupTab.swoEnableTargetSwoFreqUnit_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.002
+!MESSAGE NLS unused message: StartupTab.swoEnableTargetPortMask_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.005
+!MESSAGE NLS unused message: StartupTab.swoEnableTargetPortMask_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.009
+!MESSAGE NLS unused message: StartupTab.loadGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.013
+!MESSAGE NLS unused message: StartupTab.loadImage_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.017
+!MESSAGE NLS unused message: StartupTab.useProjectBinary_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.021
+!MESSAGE NLS unused message: StartupTab.useProjectBinary_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.024
+!MESSAGE NLS unused message: StartupTab.useFile_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.028
+!MESSAGE NLS unused message: StartupTab.FileBrowseWs_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.032
+!MESSAGE NLS unused message: StartupTab.FileBrowse_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.035
+!MESSAGE NLS unused message: StartupTab.imageOffsetLabel_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.039
+!MESSAGE NLS unused message: StartupTab.symbolsOffsetLabel_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.042
+!MESSAGE NLS unused message: StartupTab.loadSymbols_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.046
+!MESSAGE NLS unused message: StartupTab.imageFileBrowseWs_Title in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.050
+!MESSAGE NLS unused message: StartupTab.imageFileBrowse_Title in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.053
+!MESSAGE NLS unused message: StartupTab.symbolsFileBrowseWs_Title in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.057
+!MESSAGE NLS unused message: StartupTab.symbolsFileBrowse_Title in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.060
+!MESSAGE NLS unused message: StartupTab.runOptionGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.064
+!MESSAGE NLS unused message: StartupTab.setPcRegister_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.068
+!MESSAGE NLS unused message: StartupTab.setStopAt_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.071
+!MESSAGE NLS unused message: StartupTab.setResume_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.075
+!MESSAGE NLS unused message: StartupTab.doDebugInRam_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.078
+!MESSAGE NLS unused message: StartupTab.doDebugInRam_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.082
+!MESSAGE NLS unused message: StartupTab.runGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.086
+!MESSAGE NLS unused message: StartupTab.doSecondReset_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.089
+!MESSAGE NLS unused message: StartupTab.doSecondReset_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.093
+!MESSAGE NLS unused message: StartupTab.secondResetType_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.097
+!MESSAGE NLS unused message: StartupTab.secondResetWarning_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.100
+!MESSAGE NLS unused message: StartupTab.setPcRegister_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.104
+!MESSAGE NLS unused message: StartupTab.pcRegister_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.108
+!MESSAGE NLS unused message: StartupTab.setStopAt_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.111
+!MESSAGE NLS unused message: StartupTab.runCommands_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.115
+!MESSAGE NLS unused message: StartupTab.doContinue_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.119
+!MESSAGE NLS unused message: StartupTab.doContinue_ToolTipText in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.122
+!MESSAGE NLS unused message: StartupTab.imageFileName_not_specified in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.126
+!MESSAGE NLS unused message: StartupTab.imageFileName_does_not_exist in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.130
+!MESSAGE NLS unused message: StartupTab.imageOffset_not_specified in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.134
+!MESSAGE NLS unused message: StartupTab.symbolsFileName_not_specified in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.137
+!MESSAGE NLS unused message: StartupTab.symbolsFileName_does_not_exist in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.141
+!MESSAGE NLS unused message: StartupTab.symbolsOffset_not_specified in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.145
+!MESSAGE NLS unused message: StartupTab.pcRegister_not_specified in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.148
+!MESSAGE NLS unused message: StartupTab.stopAt_not_specified in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.152
+!MESSAGE NLS unused message: StartupTab.FileBrowseWs_Message in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.156
+!MESSAGE NLS unused message: GDBJtagStartupTab.initGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.159
+!MESSAGE NLS unused message: GDBJtagStartupTab.doReset_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.163
+!MESSAGE NLS unused message: GDBJtagStartupTab.doHalt_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.166
+!MESSAGE NLS unused message: GDBJtagStartupTab.loadGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.170
+!MESSAGE NLS unused message: GDBJtagStartupTab.loadImage_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.173
+!MESSAGE NLS unused message: GDBJtagStartupTab.imageLabel_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.177
+!MESSAGE NLS unused message: GDBJtagStartupTab.imageFileBrowseWs_Title in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.181
+!MESSAGE NLS unused message: GDBJtagStartupTab.imageFileBrowse_Title in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.184
+!MESSAGE NLS unused message: GDBJtagStartupTab.imageOffsetLabel_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.188
+!MESSAGE NLS unused message: GDBJtagStartupTab.FileBrowseWs_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.191
+!MESSAGE NLS unused message: GDBJtagStartupTab.FileBrowseWs_Message in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.195
+!MESSAGE NLS unused message: GDBJtagStartupTab.FileBrowse_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.199
+!MESSAGE NLS unused message: GDBJtagStartupTab.FileBrowse_Message in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.202
+!MESSAGE NLS unused message: GDBJtagStartupTab.loadSymbols_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.206
+!MESSAGE NLS unused message: GDBJtagStartupTab.symbolsLabel_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.209
+!MESSAGE NLS unused message: GDBJtagStartupTab.symbolsFileBrowseWs_Title in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.213
+!MESSAGE NLS unused message: GDBJtagStartupTab.symbolsFileBrowse_Title in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.217
+!MESSAGE NLS unused message: GDBJtagStartupTab.symbolsOffsetLabel_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.221
+!MESSAGE NLS unused message: GDBJtagStartupTab.useProjectBinary_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.224
+!MESSAGE NLS unused message: GDBJtagStartupTab.useFile_Label in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.228
+!MESSAGE NLS unused message: GDBJtagStartupTab.useProjectBinary_ToolTip in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.232
+!MESSAGE NLS unused message: GDBJtagStartupTab.runOptionGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.235
+!MESSAGE NLS unused message: GDBJtagStartupTab.setPcRegister_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.239
+!MESSAGE NLS unused message: GDBJtagStartupTab.setStopAt_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.243
+!MESSAGE NLS unused message: GDBJtagStartupTab.setResume_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.246
+!MESSAGE NLS unused message: GDBJtagStartupTab.runGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.250
+!MESSAGE NLS unused message: GDBJtagStartupTab.imageFileName_not_specified in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.254
+!MESSAGE NLS unused message: GDBJtagStartupTab.imageFileName_does_not_exist in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.258
+!MESSAGE NLS unused message: GDBJtagStartupTab.imageOffset_not_specified in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.262
+!MESSAGE NLS unused message: GDBJtagStartupTab.symbolsFileName_not_specified in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.265
+!MESSAGE NLS unused message: GDBJtagStartupTab.symbolsFileName_does_not_exist in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.269
+!MESSAGE NLS unused message: GDBJtagStartupTab.symbolsOffset_not_specified in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.273
+!MESSAGE NLS unused message: GDBJtagStartupTab.pcRegister_not_specified in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.276
+!MESSAGE NLS unused message: GDBJtagStartupTab.stopAt_not_specified in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.280
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.gdbSetupGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.284
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.gdbCommandLabel in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.287
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.gdbCommandBrowse in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.291
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.gdbCommandBrowse_Title in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.295
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.gdbCommandVariable in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.299
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.commandFactoryLabel in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.302
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.miProtocolLabel in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.306
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.verboseModeLabel in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.310
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.remoteGroup_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.313
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.useRemote_Text in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.317
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.jtagDeviceLabel in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.321
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.ipAddressLabel in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.324
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.portNumberLabel in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.328
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.connectionLabel in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2017-06-24 12:44:10.332
+!MESSAGE NLS unused message: GDBJtagDebuggerTab.update_thread_list_on_suspend in: ilg.gnuarmeclipse.debug.gdbjtag.jlink.ui.messages
+
+!ENTRY org.eclipse.jface 2 0 2017-06-24 12:47:32.687
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:47:32.687
+!MESSAGE A conflict occurred for ALT+CTRL+I:
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@647f0671,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@647f0671,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:47:32.687
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4f801842,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4f801842,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@62b8bdd4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:47:32.687
+!MESSAGE A conflict occurred for F4:
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4eb6dbee,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4eb6dbee,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@47210ea1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:47:32.687
+!MESSAGE A conflict occurred for F3:
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4b479082,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4b479082,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.editor,Open Declaration,
+		Open an editor on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@47606d6a,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:47:32.687
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@baf6ec2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@baf6ec2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2a90888c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:47:32.687
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@76f4b528,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@76f4b528,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,Declaration in Workspace,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3ba1921b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:47:32.687
+!MESSAGE A conflict occurred for CTRL+SHIFT+G:
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6c7f4932,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6c7f4932,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,References in Workspace,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@189ea944,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:47:32.687
+!MESSAGE A conflict occurred for ALT+CTRL+H:
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Open the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@587abbfc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Open the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@587abbfc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@61cbcac5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-06-24 12:47:32.687
+!MESSAGE A conflict occurred for CTRL+SHIFT+H:
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@a6d7dac,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@a6d7dac,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(CTRL+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1a55ac8d,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SESSION 2017-06-24 13:10:19.415 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.7.0_40
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -clean
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-06-24 13:10:37.511
+!MESSAGE Warning: EGit couldn't detect the installation path "gitPrefix" of native Git. Hence EGit can't respect system level
+Git settings which might be configured in ${gitPrefix}/etc/gitconfig under the native Git installation directory.
+The most important of these settings is core.autocrlf. Git for Windows by default sets this parameter to true in
+this system level configuration. The Git installation location can be configured on the
+Team > Git > Configuration preference page's 'System Settings' tab.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-06-24 13:10:37.517
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Bill'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.

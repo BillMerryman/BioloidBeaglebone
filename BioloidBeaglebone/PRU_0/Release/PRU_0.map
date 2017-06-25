@@ -1,0 +1,430 @@
+******************************************************************************
+                     PRU Linker PC v2.1.1                      
+******************************************************************************
+>> Linked Sat Jun 24 12:47:57 2017
+
+OUTPUT FILE NAME:   <Release/PRU_0.out>
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs_noexit"  address: 00000000
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+PAGE 0:
+  PRU_IMEM              00000000   00002000  000017bc  00000844  RWIX
+
+PAGE 1:
+  PRU_DMEM_0_1          00000000   00002000  0000128e  00000d72  RWIX
+  PRU_DMEM_1_0          00002000   00002000  00000000  00002000  RWIX
+  PRU_SHAREDMEM         00010000   00003000  00000000  00003000  RWIX
+  PRU_INTC              00020000   00001504  00000000  00001504  RWIX
+  PRU_CFG               00026000   00000044  00000000  00000044  RWIX
+  PRU_UART              00028000   00000038  00000038  00000000  RWIX
+  PRU_IEP               0002e000   0000031c  0000031c  00000000  RWIX
+  PRU_ECAP              00030000   00000060  00000000  00000060  RWIX
+  RSVD27                00032000   00000100  00000000  00000100  RWIX
+  RSVD21                00032400   00000100  00000000  00000100  RWIX
+  L3OCMC                40000000   00010000  00000000  00010000  RWIX
+  MCASP0_DMA            46000000   00000100  00000000  00000100  RWIX
+  UART1                 48022000   00000088  00000000  00000088  RWIX
+  UART2                 48024000   00000088  00000000  00000088  RWIX
+  I2C1                  4802a000   000000d8  00000000  000000d8  RWIX
+  MCSPI0                48030000   000001a4  00000000  000001a4  RWIX
+  DMTIMER2              48040000   0000005c  00000000  0000005c  RWIX
+  MMCHS0                48060000   00000300  00000000  00000300  RWIX
+  MBX0                  480c8000   00000140  00000000  00000140  RWIX
+  SPINLOCK              480ca000   00000880  00000000  00000880  RWIX
+  I2C2                  4819c000   000000d8  00000000  000000d8  RWIX
+  MCSPI1                481a0000   000001a4  00000000  000001a4  RWIX
+  DCAN0                 481cc000   000001e8  00000000  000001e8  RWIX
+  DCAN1                 481d0000   000001e8  00000000  000001e8  RWIX
+  PWMSS0                48300000   000002c4  00000000  000002c4  RWIX
+  PWMSS1                48302000   000002c4  00000000  000002c4  RWIX
+  PWMSS2                48304000   000002c4  00000000  000002c4  RWIX
+  RSVD13                48310000   00000100  00000000  00000100  RWIX
+  RSVD10                48318000   00000100  00000000  00000100  RWIX
+  TPCC                  49000000   00001098  00000000  00001098  RWIX
+  GEMAC                 4a100000   0000128c  00000000  0000128c  RWIX
+  DDR                   80000000   00000100  00000000  00000100  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.text:_c_int00* 
+*          0    00000000    00000014     
+                  00000000    00000014     rtspruv3_le.lib : boot_special.obj (.text:_c_int00_noinit_noargs_noexit)
+
+.text      0    00000014    000017a8     
+                  00000014    00000a3c     motion.obj (.text:motionProcess)
+                  00000a50    000001dc     uart.obj (.text:uartRxPacket)
+                  00000c2c    00000174     uart.obj (.text:uartTxPacket)
+                  00000da0    00000114     rtspruv3_le.lib : divu_c.obj (.text:__pruabi_divu)
+                  00000eb4    000000f4     uart.obj (.text:uartInitialize)
+                  00000fa8    000000d8     motion.obj (.text:motionDoPage)
+                  00001080    000000bc     AX12.obj (.text:AX12SetSyncInfoAll)
+                  0000113c    0000008c     rtspruv3_le.lib : divi_c.obj (.text:__pruabi_divi)
+                  000011c8    00000088     AX12.obj (.text:AX12SetGoalPosition)
+                  00001250    00000088     AX12.obj (.text:AX12sInitialize)
+                  000012d8    00000074     clock.obj (.text:clockInitialize)
+                  0000134c    00000074     dynamixels.obj (.text:dynamixelsIsType)
+                  000013c0    00000058     AX12.obj (.text:AX12GetInfo)
+                  00001418    00000058     AX12.obj (.text:AX12GetInfoAll)
+                  00001470    00000054     dynamixels.obj (.text:dynamixelsPing)
+                  000014c4    0000004c     main.obj (.text:main)
+                  00001510    00000040     AX12.obj (.text:AX12GetInfoSingle)
+                  00001550    0000003c     AX12.obj (.text:AX12SetMovingSpeed)
+                  0000158c    0000003c     AX12.obj (.text:AX12SetTorqueLimit)
+                  000015c8    00000038     AX12.obj (.text:AX12GetGoalPosition)
+                  00001600    00000034     rtspruv3_le.lib : memcpy.obj (.text)
+                  00001634    00000030     motion.obj (.text:motionLoadPage)
+                  00001664    0000002c     AX12.obj (.text:AX12SetCCWComplianceSlope)
+                  00001690    0000002c     AX12.obj (.text:AX12SetCWComplianceSlope)
+                  000016bc    0000002c     AX12.obj (.text:AX12SetTorqueEnable)
+                  000016e8    0000002c     clock.obj (.text:clockTimedOut)
+                  00001714    00000028     AX12.obj (.text:AX12GetID)
+                  0000173c    00000024     rtspruv3_le.lib : mpyi.obj (.text:__pruabi_mpyi)
+                  00001760    00000024     motion.obj (.text:motionInitialize)
+                  00001784    00000010     clock.obj (.text:clockStart)
+                  00001794    0000000c     AX12.obj (.text:AX12sGetCount)
+                  000017a0    0000000c     clock.obj (.text:clockSet)
+                  000017ac    00000008     rtspruv3_le.lib : exit.obj (.text:abort)
+                  000017b4    00000008                     : exit.obj (.text:loader_exit)
+
+.bss       1    00000000    00000966     UNINITIALIZED
+                  00000000    0000020f     (.common:motion$1)
+                  0000020f    00000200     (.common:currentPage)
+                  0000040f    00000200     (.common:nextPage)
+                  0000060f    00000156     (.common:AX12s)
+                  00000765    00000100     (.common:uartRxBuffer)
+                  00000865    00000100     (.common:uartTxBuffer)
+                  00000965    00000001     (.common:AX12Count)
+
+.rodata    1    00000966    00000002     
+                  00000966    00000002     dynamixels.obj (.rodata:.string:$P$T0$1)
+
+.data      1    00000968    00000426     
+                  00000968    00000400     motion.obj (.data:page_1)
+                  00000d68    00000020     motion.obj (.data)
+                  00000d88    00000006     uart.obj (.data)
+
+.stack     1    00000d90    00000400     UNINITIALIZED
+                  00000d90    00000004     rtspruv3_le.lib : boot.obj (.stack)
+                  00000d94    000003fc     --HOLE--
+
+.sysmem    1    00001190    00000100     UNINITIALIZED
+                  00001190    00000008     rtspruv3_le.lib : memory.obj (.sysmem)
+                  00001198    000000f8     --HOLE--
+
+.cinit     1    00000000    00000000     UNINITIALIZED
+
+.creg.PRU_UART.noload.near 
+*          1    00028000    00000038     NOLOAD SECTION
+                  00028000    00000038     uart.obj (.creg.PRU_UART.noload.near)
+
+.creg.PRU_UART.near 
+*          1    00028038    00000000     UNINITIALIZED
+
+.creg.PRU_UART.noload.far 
+*          1    00028038    00000000     NOLOAD SECTION
+
+.creg.PRU_UART.far 
+*          1    00028038    00000000     UNINITIALIZED
+
+.creg.PRU_IEP.noload.near 
+*          1    0002e000    00000000     NOLOAD SECTION
+
+.creg.PRU_IEP.near 
+*          1    0002e000    00000000     UNINITIALIZED
+
+.creg.PRU_IEP.noload.far 
+*          1    0002e000    0000031c     NOLOAD SECTION
+                  0002e000    0000031c     clock.obj (.creg.PRU_IEP.noload.far)
+
+.creg.PRU_IEP.far 
+*          1    0002e31c    00000000     UNINITIALIZED
+
+
+SEGMENT ATTRIBUTES
+
+    id tag      seg value
+    -- ---      --- -----
+     0 PHA_PAGE 1   1    
+     1 PHA_PAGE 2   1    
+     2 PHA_PAGE 3   1    
+     3 PHA_PAGE 4   1    
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+page  address   name                         
+----  -------   ----                         
+1     00000965  AX12Count                    
+0     000015c8  AX12GetGoalPosition          
+0     00001714  AX12GetID                    
+0     000013c0  AX12GetInfo                  
+0     00001418  AX12GetInfoAll               
+0     00001510  AX12GetInfoSingle            
+0     00001664  AX12SetCCWComplianceSlope    
+0     00001690  AX12SetCWComplianceSlope     
+0     000011c8  AX12SetGoalPosition          
+0     00001550  AX12SetMovingSpeed           
+0     00001080  AX12SetSyncInfoAll           
+0     000016bc  AX12SetTorqueEnable          
+0     0000158c  AX12SetTorqueLimit           
+1     0000060f  AX12s                        
+0     00001794  AX12sGetCount                
+0     00001250  AX12sInitialize              
+0     000017b4  C$$EXIT                      
+1     0002e000  CT_IEP                       
+1     00028000  CT_UART                      
+abs   481cc000  __PRU_CREG_BASE_DCAN0        
+abs   481d0000  __PRU_CREG_BASE_DCAN1        
+abs   80000000  __PRU_CREG_BASE_DDR          
+abs   48040000  __PRU_CREG_BASE_DMTIMER2     
+abs   4a100000  __PRU_CREG_BASE_GEMAC        
+abs   4802a000  __PRU_CREG_BASE_I2C1         
+abs   4819c000  __PRU_CREG_BASE_I2C2         
+abs   40000000  __PRU_CREG_BASE_L3OCMC       
+abs   480c8000  __PRU_CREG_BASE_MBX0         
+abs   46000000  __PRU_CREG_BASE_MCASP0_DMA   
+abs   48030000  __PRU_CREG_BASE_MCSPI0       
+abs   481a0000  __PRU_CREG_BASE_MCSPI1       
+abs   48060000  __PRU_CREG_BASE_MMCHS0       
+abs   00026000  __PRU_CREG_BASE_PRU_CFG      
+abs   00000000  __PRU_CREG_BASE_PRU_DMEM_0_1 
+abs   00002000  __PRU_CREG_BASE_PRU_DMEM_1_0 
+abs   00030000  __PRU_CREG_BASE_PRU_ECAP     
+abs   0002e000  __PRU_CREG_BASE_PRU_IEP      
+abs   00020000  __PRU_CREG_BASE_PRU_INTC     
+abs   00010000  __PRU_CREG_BASE_PRU_SHAREDMEM
+abs   00028000  __PRU_CREG_BASE_PRU_UART     
+abs   48300000  __PRU_CREG_BASE_PWMSS0       
+abs   48302000  __PRU_CREG_BASE_PWMSS1       
+abs   48304000  __PRU_CREG_BASE_PWMSS2       
+abs   48318000  __PRU_CREG_BASE_RSVD10       
+abs   48310000  __PRU_CREG_BASE_RSVD13       
+abs   00032400  __PRU_CREG_BASE_RSVD21       
+abs   00032000  __PRU_CREG_BASE_RSVD27       
+abs   480ca000  __PRU_CREG_BASE_SPINLOCK     
+abs   49000000  __PRU_CREG_BASE_TPCC         
+abs   48022000  __PRU_CREG_BASE_UART1        
+abs   48024000  __PRU_CREG_BASE_UART2        
+abs   0000000e  __PRU_CREG_DCAN0             
+abs   0000000f  __PRU_CREG_DCAN1             
+abs   0000001f  __PRU_CREG_DDR               
+abs   00000001  __PRU_CREG_DMTIMER2          
+abs   00000009  __PRU_CREG_GEMAC             
+abs   00000002  __PRU_CREG_I2C1              
+abs   00000011  __PRU_CREG_I2C2              
+abs   0000001e  __PRU_CREG_L3OCMC            
+abs   00000016  __PRU_CREG_MBX0              
+abs   00000008  __PRU_CREG_MCASP0_DMA        
+abs   00000006  __PRU_CREG_MCSPI0            
+abs   00000010  __PRU_CREG_MCSPI1            
+abs   00000005  __PRU_CREG_MMCHS0            
+abs   00000004  __PRU_CREG_PRU_CFG           
+abs   00000018  __PRU_CREG_PRU_DMEM_0_1      
+abs   00000019  __PRU_CREG_PRU_DMEM_1_0      
+abs   00000003  __PRU_CREG_PRU_ECAP          
+abs   0000001a  __PRU_CREG_PRU_IEP           
+abs   00000000  __PRU_CREG_PRU_INTC          
+abs   0000001c  __PRU_CREG_PRU_SHAREDMEM     
+abs   00000007  __PRU_CREG_PRU_UART          
+abs   00000012  __PRU_CREG_PWMSS0            
+abs   00000013  __PRU_CREG_PWMSS1            
+abs   00000014  __PRU_CREG_PWMSS2            
+abs   0000000a  __PRU_CREG_RSVD10            
+abs   0000000d  __PRU_CREG_RSVD13            
+abs   00000015  __PRU_CREG_RSVD21            
+abs   0000001b  __PRU_CREG_RSVD27            
+abs   00000017  __PRU_CREG_SPINLOCK          
+abs   0000001d  __PRU_CREG_TPCC              
+abs   0000000b  __PRU_CREG_UART1             
+abs   0000000c  __PRU_CREG_UART2             
+1     00001190  __TI_STACK_END               
+abs   00000400  __TI_STACK_SIZE              
+abs   00000100  __TI_SYSMEM_SIZE             
+abs   ffffffff  __binit__                    
+abs   ffffffff  __c_args__                   
+0     0000113c  __pruabi_divi                
+0     00000da0  __pruabi_divu                
+0     0000173c  __pruabi_mpyi                
+0     00000000  _c_int00_noinit_noargs_noexit
+1     00000d90  _stack                       
+1     00001190  _sys_memory                  
+0     000017ac  abort                        
+1     00000d83  bSection                     
+abs   ffffffff  binit                        
+0     000012d8  clockInitialize              
+0     000017a0  clockSet                     
+0     00001784  clockStart                   
+0     000016e8  clockTimedOut                
+1     0000020f  currentPage                  
+1     00000d6c  currentPageIndex             
+1     00000d70  currentPoseIndex             
+0     0000134c  dynamixelsIsType             
+0     00001470  dynamixelsPing               
+1     00000d8c  expectedResponseLength       
+0     000014c4  main                         
+0     00001600  memcpy                       
+0     00000fa8  motionDoPage                 
+0     00001760  motionInitialize             
+0     00001634  motionLoadPage               
+0     00000014  motionProcess                
+1     0000040f  nextPage                     
+1     00000968  page_1                       
+1     00000d81  sceneFinished                
+1     00000d80  sceneInitialLoop             
+1     00000d68  scenePlaying                 
+1     00000d82  sceneStop                    
+1     00000d8d  timeout                      
+0     00000eb4  uartInitialize               
+1     00000765  uartRxBuffer                 
+0     00000a50  uartRxPacket                 
+1     00000d88  uartRxReadPosition           
+1     00000d89  uartRxWritePosition          
+1     00000865  uartTxBuffer                 
+0     00000c2c  uartTxPacket                 
+1     00000d8a  uartTxReadPosition           
+1     00000d8b  uartTxWritePosition          
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+page  address   name                         
+----  -------   ----                         
+0     00000000  _c_int00_noinit_noargs_noexit
+0     00000014  motionProcess                
+0     00000a50  uartRxPacket                 
+0     00000c2c  uartTxPacket                 
+0     00000da0  __pruabi_divu                
+0     00000eb4  uartInitialize               
+0     00000fa8  motionDoPage                 
+0     00001080  AX12SetSyncInfoAll           
+0     0000113c  __pruabi_divi                
+0     000011c8  AX12SetGoalPosition          
+0     00001250  AX12sInitialize              
+0     000012d8  clockInitialize              
+0     0000134c  dynamixelsIsType             
+0     000013c0  AX12GetInfo                  
+0     00001418  AX12GetInfoAll               
+0     00001470  dynamixelsPing               
+0     000014c4  main                         
+0     00001510  AX12GetInfoSingle            
+0     00001550  AX12SetMovingSpeed           
+0     0000158c  AX12SetTorqueLimit           
+0     000015c8  AX12GetGoalPosition          
+0     00001600  memcpy                       
+0     00001634  motionLoadPage               
+0     00001664  AX12SetCCWComplianceSlope    
+0     00001690  AX12SetCWComplianceSlope     
+0     000016bc  AX12SetTorqueEnable          
+0     000016e8  clockTimedOut                
+0     00001714  AX12GetID                    
+0     0000173c  __pruabi_mpyi                
+0     00001760  motionInitialize             
+0     00001784  clockStart                   
+0     00001794  AX12sGetCount                
+0     000017a0  clockSet                     
+0     000017ac  abort                        
+0     000017b4  C$$EXIT                      
+1     0000020f  currentPage                  
+1     0000040f  nextPage                     
+1     0000060f  AX12s                        
+1     00000765  uartRxBuffer                 
+1     00000865  uartTxBuffer                 
+1     00000965  AX12Count                    
+1     00000968  page_1                       
+1     00000d68  scenePlaying                 
+1     00000d6c  currentPageIndex             
+1     00000d70  currentPoseIndex             
+1     00000d80  sceneInitialLoop             
+1     00000d81  sceneFinished                
+1     00000d82  sceneStop                    
+1     00000d83  bSection                     
+1     00000d88  uartRxReadPosition           
+1     00000d89  uartRxWritePosition          
+1     00000d8a  uartTxReadPosition           
+1     00000d8b  uartTxWritePosition          
+1     00000d8c  expectedResponseLength       
+1     00000d8d  timeout                      
+1     00000d90  _stack                       
+1     00001190  __TI_STACK_END               
+1     00001190  _sys_memory                  
+1     00028000  CT_UART                      
+1     0002e000  CT_IEP                       
+abs   00000000  __PRU_CREG_BASE_PRU_DMEM_0_1 
+abs   00000000  __PRU_CREG_PRU_INTC          
+abs   00000001  __PRU_CREG_DMTIMER2          
+abs   00000002  __PRU_CREG_I2C1              
+abs   00000003  __PRU_CREG_PRU_ECAP          
+abs   00000004  __PRU_CREG_PRU_CFG           
+abs   00000005  __PRU_CREG_MMCHS0            
+abs   00000006  __PRU_CREG_MCSPI0            
+abs   00000007  __PRU_CREG_PRU_UART          
+abs   00000008  __PRU_CREG_MCASP0_DMA        
+abs   00000009  __PRU_CREG_GEMAC             
+abs   0000000a  __PRU_CREG_RSVD10            
+abs   0000000b  __PRU_CREG_UART1             
+abs   0000000c  __PRU_CREG_UART2             
+abs   0000000d  __PRU_CREG_RSVD13            
+abs   0000000e  __PRU_CREG_DCAN0             
+abs   0000000f  __PRU_CREG_DCAN1             
+abs   00000010  __PRU_CREG_MCSPI1            
+abs   00000011  __PRU_CREG_I2C2              
+abs   00000012  __PRU_CREG_PWMSS0            
+abs   00000013  __PRU_CREG_PWMSS1            
+abs   00000014  __PRU_CREG_PWMSS2            
+abs   00000015  __PRU_CREG_RSVD21            
+abs   00000016  __PRU_CREG_MBX0              
+abs   00000017  __PRU_CREG_SPINLOCK          
+abs   00000018  __PRU_CREG_PRU_DMEM_0_1      
+abs   00000019  __PRU_CREG_PRU_DMEM_1_0      
+abs   0000001a  __PRU_CREG_PRU_IEP           
+abs   0000001b  __PRU_CREG_RSVD27            
+abs   0000001c  __PRU_CREG_PRU_SHAREDMEM     
+abs   0000001d  __PRU_CREG_TPCC              
+abs   0000001e  __PRU_CREG_L3OCMC            
+abs   0000001f  __PRU_CREG_DDR               
+abs   00000100  __TI_SYSMEM_SIZE             
+abs   00000400  __TI_STACK_SIZE              
+abs   00002000  __PRU_CREG_BASE_PRU_DMEM_1_0 
+abs   00010000  __PRU_CREG_BASE_PRU_SHAREDMEM
+abs   00020000  __PRU_CREG_BASE_PRU_INTC     
+abs   00026000  __PRU_CREG_BASE_PRU_CFG      
+abs   00028000  __PRU_CREG_BASE_PRU_UART     
+abs   0002e000  __PRU_CREG_BASE_PRU_IEP      
+abs   00030000  __PRU_CREG_BASE_PRU_ECAP     
+abs   00032000  __PRU_CREG_BASE_RSVD27       
+abs   00032400  __PRU_CREG_BASE_RSVD21       
+abs   40000000  __PRU_CREG_BASE_L3OCMC       
+abs   46000000  __PRU_CREG_BASE_MCASP0_DMA   
+abs   48022000  __PRU_CREG_BASE_UART1        
+abs   48024000  __PRU_CREG_BASE_UART2        
+abs   4802a000  __PRU_CREG_BASE_I2C1         
+abs   48030000  __PRU_CREG_BASE_MCSPI0       
+abs   48040000  __PRU_CREG_BASE_DMTIMER2     
+abs   48060000  __PRU_CREG_BASE_MMCHS0       
+abs   480c8000  __PRU_CREG_BASE_MBX0         
+abs   480ca000  __PRU_CREG_BASE_SPINLOCK     
+abs   4819c000  __PRU_CREG_BASE_I2C2         
+abs   481a0000  __PRU_CREG_BASE_MCSPI1       
+abs   481cc000  __PRU_CREG_BASE_DCAN0        
+abs   481d0000  __PRU_CREG_BASE_DCAN1        
+abs   48300000  __PRU_CREG_BASE_PWMSS0       
+abs   48302000  __PRU_CREG_BASE_PWMSS1       
+abs   48304000  __PRU_CREG_BASE_PWMSS2       
+abs   48310000  __PRU_CREG_BASE_RSVD13       
+abs   48318000  __PRU_CREG_BASE_RSVD10       
+abs   49000000  __PRU_CREG_BASE_TPCC         
+abs   4a100000  __PRU_CREG_BASE_GEMAC        
+abs   80000000  __PRU_CREG_BASE_DDR          
+abs   ffffffff  __binit__                    
+abs   ffffffff  __c_args__                   
+abs   ffffffff  binit                        
+
+[129 symbols]
