@@ -6,12 +6,12 @@
 
 #include "main.h"
 
-#define GPIO_INSTANCE_ADDRESS           (SOC_GPIO_1_REGS)
-#define GPIO_INSTANCE_PIN_NUMBER        (24)
+#define BANK_ADDRESS_FOR_LED_GPIOS		(SOC_GPIO_1_REGS)
+#define PIN_NUMBER_FOR_LED_3        	(24)
 
-#define VSYNC 	8
-#define HREF 	9
-#define PCLK  	10
+#define VSYNC_PIN_ON_R31 				8
+#define HREF_PIN_ON_R31 				9
+#define PCLK_PIN_ON_R31  				10
 
 #define IMAGE_ROWS_IN_PIXELS 			480
 #define IMAGE_COLUMNS_IN_PIXELS 		640
@@ -21,7 +21,10 @@
 
 volatile register unsigned int __R31;
 
-static inline unsigned int read_R31(void);
+static inline void waitForPCLKRisingEdge(void);
+static inline void waitForHREFRisingEdge(void);
+static inline void waitForHREFFallingEdge(void);
+static inline void waitForVSYNCFallingEdge(void);
 
 typedef struct
 {
@@ -48,48 +51,55 @@ int main()
     	unsigned int *l_DDRImage = (g_DDRImage + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS)) - 1;
     	YUVandIntUnion data;
 
-    	while(!(read_R31() & (1u << VSYNC)));
-    	while(read_R31() & (1u << VSYNC));
+    	waitForVSYNCFallingEdge();
 
     	for(unsigned int rowCounter = 0; rowCounter < IMAGE_ROWS_IN_PIXELS; rowCounter++)
     	{
-    		while(__R31 & (1u << HREF));
-    		while(!(__R31 & (1u << HREF)));
+    		waitForHREFRisingEdge();
     		for(unsigned int columnCounter = 0; columnCounter < IMAGE_COLUMNS_IN_INTS; columnCounter++)
     		{
-
-				while(__R31 & (1u << PCLK));
-				while(!(__R31 & (1u << PCLK)));
-
+    			waitForPCLKRisingEdge();
 				data.asCb0Y0Cr0Y1.byte3 = (unsigned char)__R31;
-
-				while(__R31 & (1u << PCLK));
-				while(!(__R31 & (1u << PCLK)));
-
+				waitForPCLKRisingEdge();
 				data.asCb0Y0Cr0Y1.byte2 = (unsigned char)__R31;
-
-				while(__R31 & (1u << PCLK));
-				while(!(__R31 & (1u << PCLK)));
-
+				waitForPCLKRisingEdge();
 				data.asCb0Y0Cr0Y1.byte1 = (unsigned char)__R31;
-
-				while(__R31 & (1u << PCLK));
-				while(!(__R31 & (1u << PCLK)));
-
+				waitForPCLKRisingEdge();
 				data.asCb0Y0Cr0Y1.byte0 = (unsigned char)__R31;
-
 				*(l_DDRImage--) = data.asUInt;
-
     		}
-    		while(__R31 & (1u << HREF));
+    		waitForHREFFallingEdge();
     	}
+    	HWREG(BANK_ADDRESS_FOR_LED_GPIOS + GPIO_DATAOUT) ^= (1 << PIN_NUMBER_FOR_LED_3);
     }
 }
 
-static inline unsigned int read_R31(void)
+static inline void waitForPCLKRisingEdge(void)
 {
-	while(__R31 & (1u << PCLK));
-	while(!(__R31 & (1u << PCLK)));
-	return __R31;
+	while(__R31 & (1u << PCLK_PIN_ON_R31));
+	while(!(__R31 & (1u << PCLK_PIN_ON_R31)));
 }
 
+static inline void waitForHREFRisingEdge(void)
+{
+	while(__R31 & (1u << HREF_PIN_ON_R31));
+	while(!(__R31 & (1u << HREF_PIN_ON_R31)));
+}
+
+static inline void waitForHREFFallingEdge(void)
+{
+	while(__R31 & (1u << HREF_PIN_ON_R31));
+}
+
+static inline void waitForVSYNCFallingEdge(void)
+{
+
+	do{
+		waitForPCLKRisingEdge();
+	}while(!(__R31 & (1u << VSYNC_PIN_ON_R31)));
+
+	do{
+		waitForPCLKRisingEdge();
+	}while(__R31 & (1u << VSYNC_PIN_ON_R31));
+
+}

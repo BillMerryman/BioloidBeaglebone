@@ -7,16 +7,12 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "pru.h"
 #include "image.h"
 #include "cv.h"
 #include "highgui.h"
-
-#define SECONDS 5
-#define FRAMES 15
-#define FRAME_LENGTH  640 * 480 * 2
-#define SECOND_LENGTH FRAME_LENGTH * FRAMES
 
 int main (int argc, char *argv[])
 {
@@ -60,20 +56,15 @@ int main (int argc, char *argv[])
 			sprintf(outputMessage, "pos: %d, %d", position.x, position.y);
 			cvPutText(destinationImage, outputMessage, position, &font, cvScalar(0, 0, 0, 0));
 		}
-		if((counter%5)==0)
-		{
-			cvShowImage("main", destinationImage);
-			cvShowImage("mask", maskImage);
-			counter = 0;
-		}
-		counter++;
+		cvShowImage("main", destinationImage);
+		cvShowImage("mask", maskImage);
 		key = cvWaitKey(200);
 	}
 	cvReleaseImage(&sourceImage);
 	cvReleaseImage(&destinationImage);
 	cvDestroyWindow("main");
 
-//	saveImageFromPRU_1();
+	//saveImagesFromPRU_1(50, "/root/Desktop/pictures/pictureFile%d.ppm");
 	stopPRU_0();
 	stopPRU_1();
 }

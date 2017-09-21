@@ -1,4 +1,4 @@
 activeuserprofiles=BillsLaptop;Team
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=Bill
-useridperkey=BillsLaptop.Local\=Bill;BillsLaptop.BioloidBeaglebone\=root;
+useridperkey=BillsLaptop.Local\=Bill;BillsLaptop.BioloidBeagleboneGreen\=root;BillsLaptop.BioloidBeaglebone\=root;

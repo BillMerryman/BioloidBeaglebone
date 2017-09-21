@@ -35,6 +35,9 @@
 									<listOptionValue builtIn="false" value="&quot;C:\gcc-linaro-arm-linux-gnueabihf\gcc-linaro-arm-linux-gnueabihf-4.8-2013.09_win32\arm-linux-gnueabihf\libc\usr\include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BioloidBeaglebone}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/BioloidBeaglebone/OpenCV/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\ti\AM335X_StarterWare_02_00_01_01\include&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\ti\AM335X_StarterWare_02_00_01_01\include\hw&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\ti\AM335X_StarterWare_02_00_01_01\include\armv7a\am335x&quot;"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.856579254" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>

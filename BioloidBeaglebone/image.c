@@ -99,14 +99,14 @@ int save_image_yuv(void *image, unsigned int xres, unsigned int yres, const char
 	fprintf(outf, "P6\n%d %d\n255\n", xres, yres);
 	for (y = 0; y < yres; y++) {
 		for (x = 0; x < (xres * 2); x += 4) {
-			Cb0 = ((unsigned char *)image)[(y * xres * 2) + x];
-			Y0 = ((unsigned char *)image)[(y * xres * 2) + x + 1];
-			Cr0 = ((unsigned char *)image)[(y * xres * 2) + x + 2];
-			Y1 = ((unsigned char *)image)[(y * xres * 2) + x + 3];
-//			Y1 = ((unsigned char *)image)[(y * xres * 2) + x];
-//			Cr0 = ((unsigned char *)image)[(y * xres * 2) + x + 1];
-//			Y0 = ((unsigned char *)image)[(y * xres * 2) + x + 2];
-//			Cb0 = ((unsigned char *)image)[(y * xres * 2) + x + 3];
+//			Cb0 = ((unsigned char *)image)[(y * xres * 2) + x];
+//			Y0 = ((unsigned char *)image)[(y * xres * 2) + x + 1];
+//			Cr0 = ((unsigned char *)image)[(y * xres * 2) + x + 2];
+//			Y1 = ((unsigned char *)image)[(y * xres * 2) + x + 3];
+			Y1 = ((unsigned char *)image)[(y * xres * 2) + x];
+			Cr0 = ((unsigned char *)image)[(y * xres * 2) + x + 1];
+			Y0 = ((unsigned char *)image)[(y * xres * 2) + x + 2];
+			Cb0 = ((unsigned char *)image)[(y * xres * 2) + x + 3];
 			int R, G, B;
 
 			GetColorFromYCbCr(Y0, Cb0, Cr0, &R, &G, &B);

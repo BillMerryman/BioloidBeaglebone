@@ -126,20 +126,18 @@ void stopPRU_1()
 
 }
 
-void saveImageFromPRU_1()
+void saveImagesFromPRU_1(int count, char *location)
 {
 
 	int result;
 	int counter;
-	char destination[30];
+	char destination[50];
 
-//	for(counter = 0; counter < 5; counter++)
-//	{
-//		sprintf(destination, "/root/Desktop/pictureFile%d.ppm", counter);
-//		result = save_image_yuv(pruExternalMemoryVirtual, 640, 480, destination);
-//	}
-
-	result = save_image_yuv(pruExternalMemoryVirtual, 640, 480, "/root/Desktop/pictureFile.ppm");
+	for(counter = 0; counter < count; counter++)
+	{
+		sprintf(destination, location, counter);
+		result = save_image_yuv(pruExternalMemoryVirtual, 640, 480, destination);
+	}
 
 	if (result) errx(EXIT_FAILURE, "could not save.\n");
 
