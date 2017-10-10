@@ -14,12 +14,33 @@
 #include "cv.h"
 #include "highgui.h"
 
+#define IMAGE_ROWS_IN_PIXELS_QVGA 		240
+#define IMAGE_COLUMNS_IN_PIXELS_QVGA 	320
+#define IMAGE_ROWS_IN_PIXELS_VGA 		480
+#define IMAGE_COLUMNS_IN_PIXELS_VGA 	640
+#define BYTES_PER_PIXEL_UYUV 			2
+#define BYTES_PER_PIXEL_RGB 			3
+
+//Set resolution here
+#define IMAGE_ROWS_IN_PIXELS 			IMAGE_ROWS_IN_PIXELS_VGA
+#define IMAGE_COLUMNS_IN_PIXELS 		IMAGE_COLUMNS_IN_PIXELS_VGA
+
+#define IMAGE_COLUMNS_IN_BYTES_UYUV		IMAGE_COLUMNS_IN_PIXELS * BYTES_PER_PIXEL_UYUV
+#define IMAGE_COLUMNS_IN_INTS_UYUV		IMAGE_COLUMNS_IN_BYTES_UYUV / sizeof(int)
+#define IMAGE_COLUMNS_IN_BYTES_RGB		IMAGE_COLUMNS_IN_PIXELS * BYTES_PER_PIXEL_RGB
+#define IMAGE_COLUMNS_IN_INTS_RGB		IMAGE_COLUMNS_IN_BYTES_RGB / sizeof(int)
+
+//Set image encoding type here
+#define IMAGE_COLUMNS_IN_INTS			IMAGE_COLUMNS_IN_INTS_UYUV
+#define BYTES_PER_PIXEL 				BYTES_PER_PIXEL_UYUV
+
 int main (int argc, char *argv[])
 {
 	int key = 0;
 	int counter = 0;
 	double area = 0;
 	char outputMessage[50];
+	volatile int *g_DDRImageReadyFlag;
 
 	initializePRU();
 	configurePRU_0();
@@ -33,20 +54,21 @@ int main (int argc, char *argv[])
 
 	IplImage* sourceImage = cvCreateImageHeader(inputSize, IPL_DEPTH_8U, 2);
 	IplImage* destinationImage = cvCreateImage(inputSize, IPL_DEPTH_8U, 3);
-	IplImage* hsvImage = cvCreateImage(inputSize, IPL_DEPTH_8U, 3);
 	IplImage* maskImage = cvCreateImage(inputSize, IPL_DEPTH_8U, 1);
 	CvMoments moments;
 	CvFont font;
 	CvPoint position;
 	cvInitFont(&font, CV_FONT_HERSHEY_SIMPLEX, 0.5, 0.5, 0, 1, 8);
 	cvSetData(sourceImage, (char *)getExternalMemoryVirtualPRU(), sourceImage->widthStep);
+	g_DDRImageReadyFlag = (((int *)getExternalMemoryVirtualPRU()) + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS));
 	cvNamedWindow("main", CV_WINDOW_AUTOSIZE);
 	cvNamedWindow("mask", CV_WINDOW_AUTOSIZE);
 	while(key != 'x')
 	{
+		while(*g_DDRImageReadyFlag == 0x00000000);
 		cvCvtColor(sourceImage, destinationImage, CV_YUV2RGB_YUY2);
-		cvCvtColor(destinationImage, hsvImage, CV_RGB2HSV_FULL);
-		cvInRangeS(hsvImage, cvScalar(170, 100, 100, 0), cvScalar(190, 255, 255, 255), maskImage);
+		*g_DDRImageReadyFlag = 0x00000000;
+		cvInRangeS(destinationImage, cvScalar(50, 0, 190, 0), cvScalar(200, 150, 255, 0), maskImage);
 		cvMoments(maskImage, &moments, 0);
 		area = moments.m00;
 		if (area > 2000000)
@@ -58,7 +80,7 @@ int main (int argc, char *argv[])
 		}
 		cvShowImage("main", destinationImage);
 		cvShowImage("mask", maskImage);
-		key = cvWaitKey(200);
+		key = cvWaitKey(50);
 	}
 	cvReleaseImage(&sourceImage);
 	cvReleaseImage(&destinationImage);

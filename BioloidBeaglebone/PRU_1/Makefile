@@ -57,6 +57,7 @@ bin:
 	@mv *.obj $(TARGET_MODE)
 	${PRU_SDK_ROOT}/bin/hexpru bin.cmd $(TARGET_MODE)/${PRUAPPNAME}.out
 	@mv *.bin $(TARGET_MODE) 
+	copyImageVarLocation.bat
 
 clean:
 	@rm -rf Debug Release

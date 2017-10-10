@@ -2,8 +2,8 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
-		<item value="98" key="DIALOG_Y_ORIGIN"/>
-		<item value="774" key="DIALOG_X_ORIGIN"/>
+		<item value="114" key="DIALOG_Y_ORIGIN"/>
+		<item value="1077" key="DIALOG_X_ORIGIN"/>
 		<item value="381" key="DIALOG_HEIGHT"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
@@ -13,16 +13,16 @@
 		<item value="false" key="isRegEx"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="SECOND_LENGTH" key="selection"/>
+		<item value="BYTES_PER_PIXEL" key="selection"/>
 		<list key="findhistory">
+			<item value="BYTES_PER_PIXEL"/>
+			<item value="IMAGE_COLUMNS_IN_INTS"/>
+			<item value="IMAGE_COLUMNS_IN_BYTES"/>
+			<item value="setNum"/>
+			<item value="set"/>
 			<item value="SECOND_LENGTH"/>
 			<item value="FRAME_LENGTH"/>
 			<item value="FRAMES"/>
-			<item value="SECONDS"/>
-			<item value="GPIO_INSTANCE_PIN_NUMBER"/>
-			<item value="GPIO_INSTANCE_ADDRESS"/>
-			<item value="PCLK"/>
-			<item value="HREF_ON_R31"/>
 		</list>
 		<list key="replacehistory">
 			<item value="PIN_NUMBER_FOR_LED_3"/>

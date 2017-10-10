@@ -11,8 +11,10 @@
 #define AM33XX_PRUSS_IRAM_SIZE               8192
 #define AM33XX_PRUSS_DRAM_SIZE               8192
 
-//This has to be retrieved from the map file of the PRU executable.
-#define VIDEO_POINTER_OFFSET 				 0x000000e4
+//This has to be retrieved from the map file of the PRU executable. This has to be changed
+//whenever the PRU executable changes!!!
+//originally #define VIDEO_POINTER_OFFSET 				 0x00000140
+#include "pruImageLocation.h"
 
 void *getExternalMemoryVirtualPRU();
 void initializePRU(void);
