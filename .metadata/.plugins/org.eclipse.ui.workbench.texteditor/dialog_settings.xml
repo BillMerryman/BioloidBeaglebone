@@ -3,18 +3,19 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="114" key="DIALOG_Y_ORIGIN"/>
-		<item value="1077" key="DIALOG_X_ORIGIN"/>
 		<item value="381" key="DIALOG_HEIGHT"/>
+		<item value="1077" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="BYTES_PER_PIXEL" key="selection"/>
+		<item value="getImageRGB" key="selection"/>
 		<list key="findhistory">
+			<item value="getImageRGB"/>
 			<item value="BYTES_PER_PIXEL"/>
 			<item value="IMAGE_COLUMNS_IN_INTS"/>
 			<item value="IMAGE_COLUMNS_IN_BYTES"/>
@@ -22,9 +23,9 @@
 			<item value="set"/>
 			<item value="SECOND_LENGTH"/>
 			<item value="FRAME_LENGTH"/>
-			<item value="FRAMES"/>
 		</list>
 		<list key="replacehistory">
+			<item value="getImageRGB565"/>
 			<item value="PIN_NUMBER_FOR_LED_3"/>
 			<item value="BANK_ADDRESS_FOR_LED_GPIOS"/>
 			<item value="PCLK_PIN_ON_R31"/>

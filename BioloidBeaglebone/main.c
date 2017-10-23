@@ -22,8 +22,8 @@
 #define BYTES_PER_PIXEL_RGB 			3
 
 //Set resolution here
-#define IMAGE_ROWS_IN_PIXELS 			IMAGE_ROWS_IN_PIXELS_VGA
-#define IMAGE_COLUMNS_IN_PIXELS 		IMAGE_COLUMNS_IN_PIXELS_VGA
+#define IMAGE_ROWS_IN_PIXELS 			IMAGE_ROWS_IN_PIXELS_QVGA
+#define IMAGE_COLUMNS_IN_PIXELS 		IMAGE_COLUMNS_IN_PIXELS_QVGA
 
 #define IMAGE_COLUMNS_IN_BYTES_UYUV		IMAGE_COLUMNS_IN_PIXELS * BYTES_PER_PIXEL_UYUV
 #define IMAGE_COLUMNS_IN_INTS_UYUV		IMAGE_COLUMNS_IN_BYTES_UYUV / sizeof(int)
@@ -31,8 +31,8 @@
 #define IMAGE_COLUMNS_IN_INTS_RGB		IMAGE_COLUMNS_IN_BYTES_RGB / sizeof(int)
 
 //Set image encoding type here
-#define IMAGE_COLUMNS_IN_INTS			IMAGE_COLUMNS_IN_INTS_UYUV
-#define BYTES_PER_PIXEL 				BYTES_PER_PIXEL_UYUV
+#define IMAGE_COLUMNS_IN_INTS			IMAGE_COLUMNS_IN_INTS_RGB
+#define BYTES_PER_PIXEL 				BYTES_PER_PIXEL_RGB
 
 int main (int argc, char *argv[])
 {
@@ -49,11 +49,10 @@ int main (int argc, char *argv[])
 	startPRU_1();
 
 	CvSize inputSize;
-	inputSize.width = 640;
-	inputSize.height = 480;
+	inputSize.width = IMAGE_COLUMNS_IN_PIXELS;
+	inputSize.height = IMAGE_ROWS_IN_PIXELS;
 
-	IplImage* sourceImage = cvCreateImageHeader(inputSize, IPL_DEPTH_8U, 2);
-	IplImage* destinationImage = cvCreateImage(inputSize, IPL_DEPTH_8U, 3);
+	IplImage* sourceImage = cvCreateImageHeader(inputSize, IPL_DEPTH_8U, 3);
 	IplImage* maskImage = cvCreateImage(inputSize, IPL_DEPTH_8U, 1);
 	CvMoments moments;
 	CvFont font;
@@ -66,25 +65,26 @@ int main (int argc, char *argv[])
 	while(key != 'x')
 	{
 		while(*g_DDRImageReadyFlag == 0x00000000);
-		cvCvtColor(sourceImage, destinationImage, CV_YUV2RGB_YUY2);
-		*g_DDRImageReadyFlag = 0x00000000;
-		cvInRangeS(destinationImage, cvScalar(50, 0, 190, 0), cvScalar(200, 150, 255, 0), maskImage);
+		cvInRangeS(sourceImage, cvScalar(60, 0, 100, 0), cvScalar(200, 80, 255, 0), maskImage);
 		cvMoments(maskImage, &moments, 0);
 		area = moments.m00;
-		if (area > 2000000)
+		if (area > 1000000)
 		{
 			position.x = moments.m10 / area;
 			position.y = moments.m01 / area;
 			sprintf(outputMessage, "pos: %d, %d", position.x, position.y);
-			cvPutText(destinationImage, outputMessage, position, &font, cvScalar(0, 0, 0, 0));
+			cvPutText(sourceImage, outputMessage, cvPoint(position.x + 10, position.y + 5), &font, cvScalar(0, 0, 0, 0));
+			cvRectangle(sourceImage, cvPoint(position.x - 5, position.y - 5), cvPoint(position.x + 5, position.y + 5), cvScalar(0, 255, 0, 0), 1, 8, 0);
 		}
-		cvShowImage("main", destinationImage);
+		cvShowImage("main", sourceImage);
 		cvShowImage("mask", maskImage);
+		*g_DDRImageReadyFlag = 0x00000000;
 		key = cvWaitKey(50);
 	}
 	cvReleaseImage(&sourceImage);
-	cvReleaseImage(&destinationImage);
+	cvReleaseImage(&maskImage);
 	cvDestroyWindow("main");
+	cvDestroyWindow("mask");
 
 	//saveImagesFromPRU_1(50, "/root/Desktop/pictures/pictureFile%d.ppm");
 	stopPRU_0();

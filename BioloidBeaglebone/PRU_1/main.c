@@ -23,8 +23,8 @@
 #define INTS_PER_PASS_RGB				3
 
 //Set resolution here
-#define IMAGE_ROWS_IN_PIXELS 			IMAGE_ROWS_IN_PIXELS_VGA
-#define IMAGE_COLUMNS_IN_PIXELS 		IMAGE_COLUMNS_IN_PIXELS_VGA
+#define IMAGE_ROWS_IN_PIXELS 			IMAGE_ROWS_IN_PIXELS_QVGA
+#define IMAGE_COLUMNS_IN_PIXELS 		IMAGE_COLUMNS_IN_PIXELS_QVGA
 
 #define IMAGE_COLUMNS_IN_BYTES_UYUV		IMAGE_COLUMNS_IN_PIXELS * BYTES_PER_PIXEL_UYUV
 #define IMAGE_COLUMNS_IN_INTS_UYUV		IMAGE_COLUMNS_IN_BYTES_UYUV / sizeof(int)
@@ -53,12 +53,13 @@ static inline void waitForHREFRisingEdge(void);
 static inline void waitForHREFFallingEdge(void);
 static inline void waitForVSYNCFallingEdge(void);
 static inline void getImageUYUV(void);
-static void inline getImageRGB(void);
+static inline void getImageRGB565(void);
+static inline void getImageGRB422(void);
 
 //Set image encoding type here
-#define IMAGE_COLUMNS_IN_INTS			IMAGE_COLUMNS_IN_INTS_UYUV
-#define BYTES_PER_PIXEL 				BYTES_PER_PIXEL_UYUV
-#define GET_IMAGE						getImageUYUV()
+#define IMAGE_COLUMNS_IN_INTS			IMAGE_COLUMNS_IN_INTS_RGB
+#define BYTES_PER_PIXEL 				BYTES_PER_PIXEL_RGB
+#define GET_IMAGE						getImageGRB422()
 
 typedef struct
 {
@@ -147,7 +148,7 @@ static inline void getImageUYUV(void)
 	}
 }
 
-static void inline getImageRGB(void)
+static void inline getImageRGB565(void)
 {
 	unsigned int *l_DDRImage = (g_DDRImage + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_RGB)) - 1;
 	YUVandIntUnion data;
@@ -232,6 +233,62 @@ static void inline getImageRGB(void)
 			*(l_DDRImage--) = data.asUInt;	//Send 4 byte int
 			/**********************/
 
+		}
+		waitForHREFFallingEdge();
+	}
+}
+
+static void inline getImageGRB422(void)
+{
+	unsigned int *l_DDRImage = (g_DDRImage + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_RGB)) - 1;
+	YUVandIntUnion data1;
+	YUVandIntUnion data2;
+	YUVandIntUnion data3;
+
+	waitForVSYNCFallingEdge();
+
+	for(unsigned int rowCounter = 0; rowCounter < IMAGE_ROWS_IN_PIXELS; rowCounter++)
+	{
+		waitForHREFRisingEdge();
+		waitForPCLKRisingEdge();
+		for(unsigned int columnCounter = 0; columnCounter < IMAGE_COLUMNS_IN_INTS_RGB / INTS_PER_PASS_RGB; columnCounter++)
+		{
+			//get G 1
+			waitForPCLKRisingEdge();
+			data1.asCb0Y0Cr0Y1.byte2 = (unsigned char)__R31;
+			//get R 2
+			waitForPCLKRisingEdge();
+			data1.asCb0Y0Cr0Y1.byte3 = (unsigned char)__R31;
+			data1.asCb0Y0Cr0Y1.byte0 = (unsigned char)__R31;
+			//get G 3
+			waitForPCLKRisingEdge();
+			data2.asCb0Y0Cr0Y1.byte3 = (unsigned char)__R31;
+			//get B 4
+			waitForPCLKRisingEdge();
+			data1.asCb0Y0Cr0Y1.byte1 = (unsigned char)__R31;
+			data2.asCb0Y0Cr0Y1.byte2 = (unsigned char)__R31;
+			//send first int
+			*(l_DDRImage--) = data1.asUInt;
+
+			//get G 5
+			waitForPCLKRisingEdge();
+			data2.asCb0Y0Cr0Y1.byte0 = (unsigned char)__R31;
+			//get R 6
+			waitForPCLKRisingEdge();
+			data2.asCb0Y0Cr0Y1.byte1 = (unsigned char)__R31;
+			data3.asCb0Y0Cr0Y1.byte2 = (unsigned char)__R31;
+			//send second int
+			*(l_DDRImage--) = data2.asUInt;
+
+			//get G 7
+			waitForPCLKRisingEdge();
+			data3.asCb0Y0Cr0Y1.byte1 = (unsigned char)__R31;
+			//get B 8
+			waitForPCLKRisingEdge();
+			data3.asCb0Y0Cr0Y1.byte3 = (unsigned char)__R31;
+			data3.asCb0Y0Cr0Y1.byte0 = (unsigned char)__R31;
+			//send third int
+			*(l_DDRImage--) = data3.asUInt;
 		}
 		waitForHREFFallingEdge();
 	}
