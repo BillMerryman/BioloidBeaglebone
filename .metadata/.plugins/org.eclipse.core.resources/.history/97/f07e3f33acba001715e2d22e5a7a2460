@@ -1,0 +1,17 @@
+/*
+ * motion.c
+ *
+ *  Created on: Oct 26, 2017
+ *      Author: Bill
+ */
+
+#include <stdint.h>
+#include "motion.h"
+
+void motionLoadFile(const char *filename)
+{
+
+}
+
+
+

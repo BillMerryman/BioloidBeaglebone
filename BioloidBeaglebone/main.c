@@ -13,6 +13,7 @@
 #include "image.h"
 #include "cv.h"
 #include "highgui.h"
+#include "motion.h"
 
 #define IMAGE_ROWS_IN_PIXELS_QVGA 		240
 #define IMAGE_COLUMNS_IN_PIXELS_QVGA 	320
@@ -36,6 +37,9 @@
 
 int main (int argc, char *argv[])
 {
+
+	return motionLoadFile("/root/Desktop/FlexTest.mtn");
+
 	int key = 0;
 	int counter = 0;
 	double area = 0;
