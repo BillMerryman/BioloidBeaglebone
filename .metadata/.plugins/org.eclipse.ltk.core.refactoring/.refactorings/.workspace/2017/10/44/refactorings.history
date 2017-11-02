@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;BioloidBeaglebone/PRUInteropDataLocation.h&apos;" deleteContents="false" description="Delete resource &apos;BioloidBeaglebone/PRUInteropDataLocation.h&apos;" element1="/BioloidBeaglebone/PRUInteropDataLocation.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1509330231884"/>
+</session>

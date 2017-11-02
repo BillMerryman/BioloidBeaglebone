@@ -31,6 +31,11 @@
 #define IMAGE_COLUMNS_IN_BYTES_RGB		IMAGE_COLUMNS_IN_PIXELS * BYTES_PER_PIXEL_RGB
 #define IMAGE_COLUMNS_IN_INTS_RGB		IMAGE_COLUMNS_IN_BYTES_RGB / sizeof(int)
 
+//Set image encoding type here
+#define IMAGE_COLUMNS_IN_INTS			IMAGE_COLUMNS_IN_INTS_RGB
+#define BYTES_PER_PIXEL 				BYTES_PER_PIXEL_RGB
+#define GET_IMAGE						getImageGRB422()
+
 #define RED_5_BIT_MASK					0xF8
 #define GREEN_TOP_3_BIT_POSITION		5
 #define GREEN_BOTTOM_3_BIT_POSITION		3
@@ -56,11 +61,6 @@ static inline void getImageUYUV(void);
 static inline void getImageRGB565(void);
 static inline void getImageGRB422(void);
 
-//Set image encoding type here
-#define IMAGE_COLUMNS_IN_INTS			IMAGE_COLUMNS_IN_INTS_RGB
-#define BYTES_PER_PIXEL 				BYTES_PER_PIXEL_RGB
-#define GET_IMAGE						getImageGRB422()
-
 typedef struct
 {
 	unsigned char byte0;
@@ -75,13 +75,13 @@ typedef union
 	unsigned int asUInt;
 } YUVandIntUnion;
 
-#pragma NOINIT(g_DDRImage);
-unsigned int *g_DDRImage; //make noinit
+#pragma NOINIT(g_PRUInteropData);
+unsigned int *g_PRUInteropData; //make noinit
 volatile unsigned int *g_DDRImageReadyFlag;
 
 int main()
 {
-	g_DDRImageReadyFlag = (g_DDRImage + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS));
+	g_DDRImageReadyFlag = (g_PRUInteropData + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS));
 	*(g_DDRImageReadyFlag) = 0x00000000;
     while(1)
     {
@@ -124,7 +124,7 @@ static inline void waitForVSYNCFallingEdge(void)
 
 static inline void getImageUYUV(void)
 {
-	unsigned int *l_DDRImage = (g_DDRImage + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_UYUV)) - 1;
+	unsigned int *l_DDRImage = (g_PRUInteropData + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_UYUV)) - 1;
 	YUVandIntUnion data;
 
 	waitForVSYNCFallingEdge();
@@ -150,7 +150,7 @@ static inline void getImageUYUV(void)
 
 static void inline getImageRGB565(void)
 {
-	unsigned int *l_DDRImage = (g_DDRImage + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_RGB)) - 1;
+	unsigned int *l_DDRImage = (g_PRUInteropData + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_RGB)) - 1;
 	YUVandIntUnion data;
 	unsigned char R31_1;
 	unsigned char R31_2;
@@ -240,7 +240,7 @@ static void inline getImageRGB565(void)
 
 static void inline getImageGRB422(void)
 {
-	unsigned int *l_DDRImage = (g_DDRImage + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_RGB)) - 1;
+	unsigned int *l_DDRImage = (g_PRUInteropData + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_RGB)) - 1;
 	YUVandIntUnion data1;
 	YUVandIntUnion data2;
 	YUVandIntUnion data3;

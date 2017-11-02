@@ -94,7 +94,7 @@ $(COBJ): %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS) $(OPENCV_INC)
 
 clean: pru_clean
-	$(REMOVE) ./*.o
+	$(REMOVE) ./*.o ./PRUInteropDataLocation.h
 	$(REMOVE) $(PROJECT)
 	
 pru_bin:

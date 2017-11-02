@@ -1,0 +1,6 @@
+@ECHO off
+
+FOR /f "tokens=2* delims=.\ " %%K IN ( 'findstr "\<g_DDRImage\>" Release\PRU_1.map' ) DO (
+    SET RESULT=%%K
+)
+echo #define PRU_INTEROP_POINTER_OFFSET 				 0x%RESULT% > ../PRUInteropDataLocation.h

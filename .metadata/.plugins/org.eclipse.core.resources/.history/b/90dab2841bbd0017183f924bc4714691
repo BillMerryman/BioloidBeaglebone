@@ -1,0 +1,27 @@
+/*
+ * pruInterop.h
+ *
+ *  Created on: Oct 29, 2017
+ *      Author: Bill
+ */
+
+#ifndef PRUINTEROP_H_
+#define PRUINTEROP_H_
+
+//Servo Constants
+
+
+
+//Interop Structure
+
+typedef struct{
+	MOTION_PAGE motionPage;
+	uint8_t motionPageReadyFlag;
+} PRU_INTEROP_0_DATA;
+
+typedef struct{
+	PRU_INTEROP_0_DATA PRUInterop0Data;
+	PRU_INTEROP_1_DATA PRUInterop1Data;
+} PRU_INTEROP_DATA;
+
+#endif /* PRUINTEROP_H_ */

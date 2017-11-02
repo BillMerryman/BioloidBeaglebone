@@ -24,9 +24,17 @@ void *pruExternalMemoryPhysical;
 void *pru0DataMemory;
 void *pru1DataMemory;
 
+PRU_INTEROP_DATA *PRUInteropDataVirtual;
+PRU_INTEROP_DATA *PRUInteropDataPhysical;
+
 void *getExternalMemoryVirtualPRU()
 {
 	return pruExternalMemoryVirtual;
+}
+
+PRU_INTEROP_DATA *getPRUInteropData()
+{
+	return PRUInteropDataVirtual;
 }
 
 void initializePRU()
@@ -58,27 +66,29 @@ void initializePRU()
 
 	/* Map external memory */
 	prussdrv_map_extmem(&pruExternalMemoryVirtual);
+	PRUInteropDataVirtual = (PRU_INTEROP_DATA *)pruExternalMemoryVirtual;
 
 	/* Get a reference to the physical address of external memory the PRU driver has allocated */
 	pruExternalMemoryPhysical = (void *)prussdrv_get_phys_addr(pruExternalMemoryVirtual);
+	PRUInteropDataPhysical = (PRU_INTEROP_DATA *)pruExternalMemoryPhysical;
 
 }
 
-void configurePRU_0()
+void configurePRU_0(const char *pruProgramTextFile, const char *pruProgramDataFile)
 {
 
 	int result;
 
-	result = prussdrv_load_datafile(0,"/root/Desktop/data_0.bin");
+	result = prussdrv_load_datafile(0, pruProgramDataFile);
 
 	/* write the physical address of PRU external memory to the address of the pointer in PRU memory that the PRU will use to access it */
 
-//	((uint8_t *)pru1DataMemory)[VIDEO_POINTER_OFFSET + 0] = ((unsigned int)pruExternalMemoryPhysical >> 0) & 0xff;
-//	((uint8_t *)pru1DataMemory)[VIDEO_POINTER_OFFSET + 1] = ((unsigned int)pruExternalMemoryPhysical >> 8) & 0xff;
-//	((uint8_t *)pru1DataMemory)[VIDEO_POINTER_OFFSET + 2] = ((unsigned int)pruExternalMemoryPhysical >> 16) & 0xff;
-//	((uint8_t *)pru1DataMemory)[VIDEO_POINTER_OFFSET + 3] = ((unsigned int)pruExternalMemoryPhysical >> 24) & 0xff;
+//	((uint8_t *)pru0DataMemory)[PRU_INTEROP_0_DATA_POINTER_OFFSET + 0] = ((unsigned int)pruExternalMemoryPhysical >> 0) & 0xff;
+//	((uint8_t *)pru0DataMemory)[PRU_INTEROP_0_DATA_POINTER_OFFSET + 1] = ((unsigned int)pruExternalMemoryPhysical >> 8) & 0xff;
+//	((uint8_t *)pru0DataMemory)[PRU_INTEROP_0_DATA_POINTER_OFFSET + 2] = ((unsigned int)pruExternalMemoryPhysical >> 16) & 0xff;
+//	((uint8_t *)pru0DataMemory)[PRU_INTEROP_0_DATA_POINTER_OFFSET + 3] = ((unsigned int)pruExternalMemoryPhysical >> 24) & 0xff;
 
-	prussdrv_load_program(0, "/root/Desktop/text_0.bin");
+	prussdrv_load_program(0, pruProgramTextFile);
 
 }
 
@@ -95,21 +105,28 @@ void stopPRU_0()
 
 }
 
-void configurePRU_1()
+void configurePRU_1(const char *pruProgramTextFile, const char *pruProgramDataFile)
 {
+
+	/*
+	 *
+	 * Rewrite the configurePRU functions to be one configure function, one start function,
+	 * and one stop function, that takes the PRU number as an argument, and also takes an
+	 * optional DATA_POINTER_OFFSET supplied to the function. If supplied, it is used to
+	 * write back to PRU data memory. Otherwise it is skipped...
+	 *
+	 */
 
 	int result;
 
-	result = prussdrv_load_datafile(1,"/root/Desktop/data_1.bin");
+	result = prussdrv_load_datafile(1, pruProgramDataFile);
 
-	/* write the physical address of PRU external memory to the address of the pointer in PRU memory that the PRU will use to access it */
+	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 0] = ((unsigned int)pruExternalMemoryPhysical >> 0) & 0xff;
+	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 1] = ((unsigned int)pruExternalMemoryPhysical >> 8) & 0xff;
+	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 2] = ((unsigned int)pruExternalMemoryPhysical >> 16) & 0xff;
+	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 3] = ((unsigned int)pruExternalMemoryPhysical >> 24) & 0xff;
 
-	((uint8_t *)pru1DataMemory)[VIDEO_POINTER_OFFSET + 0] = ((unsigned int)pruExternalMemoryPhysical >> 0) & 0xff;
-	((uint8_t *)pru1DataMemory)[VIDEO_POINTER_OFFSET + 1] = ((unsigned int)pruExternalMemoryPhysical >> 8) & 0xff;
-	((uint8_t *)pru1DataMemory)[VIDEO_POINTER_OFFSET + 2] = ((unsigned int)pruExternalMemoryPhysical >> 16) & 0xff;
-	((uint8_t *)pru1DataMemory)[VIDEO_POINTER_OFFSET + 3] = ((unsigned int)pruExternalMemoryPhysical >> 24) & 0xff;
-
-	prussdrv_load_program(1, "/root/Desktop/text_1.bin");
+	prussdrv_load_program(1, pruProgramTextFile);
 
 }
 
@@ -123,22 +140,5 @@ void stopPRU_1()
 {
 
 	prussdrv_pru_disable(1);
-
-}
-
-void saveImagesFromPRU_1(int count, char *location)
-{
-
-	int result;
-	int counter;
-	char destination[50];
-
-	for(counter = 0; counter < count; counter++)
-	{
-		sprintf(destination, location, counter);
-		result = save_image_yuv(pruExternalMemoryVirtual, 640, 480, destination);
-	}
-
-	if (result) errx(EXIT_FAILURE, "could not save.\n");
 
 }

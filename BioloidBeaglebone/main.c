@@ -8,37 +8,19 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdint.h>
 
-#include "pru.h"
 #include "image.h"
 #include "cv.h"
 #include "highgui.h"
 #include "motion.h"
-
-#define IMAGE_ROWS_IN_PIXELS_QVGA 		240
-#define IMAGE_COLUMNS_IN_PIXELS_QVGA 	320
-#define IMAGE_ROWS_IN_PIXELS_VGA 		480
-#define IMAGE_COLUMNS_IN_PIXELS_VGA 	640
-#define BYTES_PER_PIXEL_UYUV 			2
-#define BYTES_PER_PIXEL_RGB 			3
-
-//Set resolution here
-#define IMAGE_ROWS_IN_PIXELS 			IMAGE_ROWS_IN_PIXELS_QVGA
-#define IMAGE_COLUMNS_IN_PIXELS 		IMAGE_COLUMNS_IN_PIXELS_QVGA
-
-#define IMAGE_COLUMNS_IN_BYTES_UYUV		IMAGE_COLUMNS_IN_PIXELS * BYTES_PER_PIXEL_UYUV
-#define IMAGE_COLUMNS_IN_INTS_UYUV		IMAGE_COLUMNS_IN_BYTES_UYUV / sizeof(int)
-#define IMAGE_COLUMNS_IN_BYTES_RGB		IMAGE_COLUMNS_IN_PIXELS * BYTES_PER_PIXEL_RGB
-#define IMAGE_COLUMNS_IN_INTS_RGB		IMAGE_COLUMNS_IN_BYTES_RGB / sizeof(int)
-
-//Set image encoding type here
-#define IMAGE_COLUMNS_IN_INTS			IMAGE_COLUMNS_IN_INTS_RGB
-#define BYTES_PER_PIXEL 				BYTES_PER_PIXEL_RGB
+#include "pruInterop.h"
+#include "pru.h"
 
 int main (int argc, char *argv[])
 {
 
-	return motionLoadFile("/root/Desktop/FlexTest.mtn");
+	//return motionLoadFile("/root/Desktop/FlexTest.mtn");
 
 	int key = 0;
 	int counter = 0;
@@ -47,9 +29,9 @@ int main (int argc, char *argv[])
 	volatile int *g_DDRImageReadyFlag;
 
 	initializePRU();
-	configurePRU_0();
+	configurePRU_0("/root/Desktop/text_0.bin", "/root/Desktop/data_0.bin");
 	startPRU_0();
-	configurePRU_1();
+	configurePRU_1("/root/Desktop/text_1.bin", "/root/Desktop/data_1.bin");
 	startPRU_1();
 
 	CvSize inputSize;
@@ -90,7 +72,6 @@ int main (int argc, char *argv[])
 	cvDestroyWindow("main");
 	cvDestroyWindow("mask");
 
-	//saveImagesFromPRU_1(50, "/root/Desktop/pictures/pictureFile%d.ppm");
 	stopPRU_0();
 	stopPRU_1();
 }

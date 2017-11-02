@@ -13,7 +13,15 @@
 #include "motion.h"
 #include "main.h"
 
+#pragma NOINIT(g_PRUInteropData);
+unsigned int *g_PRUInteropData; //make noinit
+volatile unsigned int *g_DDRImageReadyFlag;
+
 void main(){
+
+	g_DDRImageReadyFlag = g_PRUInteropData;
+	*(g_DDRImageReadyFlag) = 0x00000000;
+	while(*g_DDRImageReadyFlag == 0xFFFFFFFF);
 
 	//Initialize AND ENABLE uart and clock so we can start talking
 	uartInitialize();
