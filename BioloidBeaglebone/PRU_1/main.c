@@ -4,7 +4,11 @@
 #include "pruss.h"
 #include "gpio_v2.h"
 
-#include "main.h"
+#include "../PRUInterop1.h"
+
+#define INTS_PER_PASS_UYUV				1
+#define INTS_PER_PASS_RGB				3
+#define GET_IMAGE						getImageGRB422()
 
 #define BANK_ADDRESS_FOR_LED_GPIOS		(SOC_GPIO_1_REGS)
 #define PIN_NUMBER_FOR_LED_3        	(24)
@@ -12,29 +16,6 @@
 #define VSYNC_PIN_ON_R31 				8
 #define HREF_PIN_ON_R31 				9
 #define PCLK_PIN_ON_R31  				10
-
-#define IMAGE_ROWS_IN_PIXELS_QVGA 		240
-#define IMAGE_COLUMNS_IN_PIXELS_QVGA 	320
-#define IMAGE_ROWS_IN_PIXELS_VGA 		480
-#define IMAGE_COLUMNS_IN_PIXELS_VGA 	640
-#define BYTES_PER_PIXEL_UYUV 			2
-#define BYTES_PER_PIXEL_RGB 			3
-#define INTS_PER_PASS_UYUV				1
-#define INTS_PER_PASS_RGB				3
-
-//Set resolution here
-#define IMAGE_ROWS_IN_PIXELS 			IMAGE_ROWS_IN_PIXELS_QVGA
-#define IMAGE_COLUMNS_IN_PIXELS 		IMAGE_COLUMNS_IN_PIXELS_QVGA
-
-#define IMAGE_COLUMNS_IN_BYTES_UYUV		IMAGE_COLUMNS_IN_PIXELS * BYTES_PER_PIXEL_UYUV
-#define IMAGE_COLUMNS_IN_INTS_UYUV		IMAGE_COLUMNS_IN_BYTES_UYUV / sizeof(int)
-#define IMAGE_COLUMNS_IN_BYTES_RGB		IMAGE_COLUMNS_IN_PIXELS * BYTES_PER_PIXEL_RGB
-#define IMAGE_COLUMNS_IN_INTS_RGB		IMAGE_COLUMNS_IN_BYTES_RGB / sizeof(int)
-
-//Set image encoding type here
-#define IMAGE_COLUMNS_IN_INTS			IMAGE_COLUMNS_IN_INTS_RGB
-#define BYTES_PER_PIXEL 				BYTES_PER_PIXEL_RGB
-#define GET_IMAGE						getImageGRB422()
 
 #define RED_5_BIT_MASK					0xF8
 #define GREEN_TOP_3_BIT_POSITION		5
@@ -75,19 +56,21 @@ typedef union
 	unsigned int asUInt;
 } YUVandIntUnion;
 
-#pragma NOINIT(g_PRUInteropData);
-unsigned int *g_PRUInteropData; //make noinit
-volatile unsigned int *g_DDRImageReadyFlag;
+#pragma NOINIT(PRUInterop1Data);
+PRU_INTEROP_1_DATA *PRUInterop1Data; //make noinit
+unsigned int *imageData;
+volatile unsigned int *imageReadyFlag;
 
 int main()
 {
-	g_DDRImageReadyFlag = (g_PRUInteropData + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS));
-	*(g_DDRImageReadyFlag) = 0x00000000;
+	imageData = (unsigned int *)(&(PRUInterop1Data->imageData));
+	imageReadyFlag = &(PRUInterop1Data->imageReadyFlag);
+	*imageReadyFlag = IMAGE_NOT_READY;
     while(1)
     {
-    	while(*g_DDRImageReadyFlag == 0xFFFFFFFF);
+    	while(*imageReadyFlag == IMAGE_READY);
     	GET_IMAGE;
-    	*g_DDRImageReadyFlag = 0xFFFFFFFF;
+    	*imageReadyFlag = IMAGE_READY;
     	HWREG(BANK_ADDRESS_FOR_LED_GPIOS + GPIO_DATAOUT) ^= (1 << PIN_NUMBER_FOR_LED_3);
     }
 }
@@ -124,7 +107,7 @@ static inline void waitForVSYNCFallingEdge(void)
 
 static inline void getImageUYUV(void)
 {
-	unsigned int *l_DDRImage = (g_PRUInteropData + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_UYUV)) - 1;
+	unsigned int *l_DDRImage = imageData + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_UYUV) - 1;
 	YUVandIntUnion data;
 
 	waitForVSYNCFallingEdge();
@@ -150,7 +133,7 @@ static inline void getImageUYUV(void)
 
 static void inline getImageRGB565(void)
 {
-	unsigned int *l_DDRImage = (g_PRUInteropData + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_RGB)) - 1;
+	unsigned int *l_DDRImage = imageData + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_RGB) - 1;
 	YUVandIntUnion data;
 	unsigned char R31_1;
 	unsigned char R31_2;
@@ -240,7 +223,7 @@ static void inline getImageRGB565(void)
 
 static void inline getImageGRB422(void)
 {
-	unsigned int *l_DDRImage = (g_PRUInteropData + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_RGB)) - 1;
+	unsigned int *l_DDRImage = imageData + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_RGB) - 1;
 	YUVandIntUnion data1;
 	YUVandIntUnion data2;
 	YUVandIntUnion data3;

@@ -3,36 +3,36 @@
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="121" key="DIALOG_Y_ORIGIN"/>
-		<item value="1012" key="DIALOG_X_ORIGIN"/>
 		<item value="381" key="DIALOG_HEIGHT"/>
+		<item value="1012" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="getExternalMemoryVirtualPRU" key="selection"/>
+		<item value="" key="selection"/>
 		<list key="findhistory">
+			<item value="(PRUInterop1Data + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_RGB)) - 1;"/>
+			<item value="g_PRUInteropData"/>
+			<item value="g_DDRImageReadyFlag"/>
 			<item value="getExternalMemoryVirtualPRU"/>
 			<item value="g_DDRImage"/>
 			<item value="getImageRGB"/>
 			<item value="BYTES_PER_PIXEL"/>
 			<item value="IMAGE_COLUMNS_IN_INTS"/>
-			<item value="IMAGE_COLUMNS_IN_BYTES"/>
-			<item value="setNum"/>
-			<item value="set"/>
 		</list>
 		<list key="replacehistory">
+			<item value="(((unsigned int *)PRUInterop1Data) + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS_RGB)) - 1;"/>
+			<item value="PRUInterop1Data"/>
+			<item value="imageReadyFlag"/>
 			<item value="g_PRUInteropData"/>
 			<item value="getImageRGB565"/>
 			<item value="PIN_NUMBER_FOR_LED_3"/>
 			<item value="BANK_ADDRESS_FOR_LED_GPIOS"/>
 			<item value="PCLK_PIN_ON_R31"/>
-			<item value="HREF_PIN_ON_R31"/>
-			<item value="HREF_ON_R31"/>
-			<item value="VSYNC_PIN_ON_R31"/>
 		</list>
 	</section>
 </section>

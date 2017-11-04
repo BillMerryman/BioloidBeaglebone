@@ -26,7 +26,7 @@ int main (int argc, char *argv[])
 	int counter = 0;
 	double area = 0;
 	char outputMessage[50];
-	volatile int *g_DDRImageReadyFlag;
+	volatile int *imageReadyFlag;
 
 	initializePRU();
 	configurePRU_0("/root/Desktop/text_0.bin", "/root/Desktop/data_0.bin");
@@ -38,19 +38,20 @@ int main (int argc, char *argv[])
 	inputSize.width = IMAGE_COLUMNS_IN_PIXELS;
 	inputSize.height = IMAGE_ROWS_IN_PIXELS;
 
+	PRU_INTEROP_1_DATA* PRUInterop1Data = &(getPRUInteropData()->PRUInterop1Data);
 	IplImage* sourceImage = cvCreateImageHeader(inputSize, IPL_DEPTH_8U, 3);
 	IplImage* maskImage = cvCreateImage(inputSize, IPL_DEPTH_8U, 1);
 	CvMoments moments;
 	CvFont font;
 	CvPoint position;
 	cvInitFont(&font, CV_FONT_HERSHEY_SIMPLEX, 0.5, 0.5, 0, 1, 8);
-	cvSetData(sourceImage, (char *)getExternalMemoryVirtualPRU(), sourceImage->widthStep);
-	g_DDRImageReadyFlag = (((int *)getExternalMemoryVirtualPRU()) + (IMAGE_ROWS_IN_PIXELS * IMAGE_COLUMNS_IN_INTS));
+	cvSetData(sourceImage, (void *)(&(PRUInterop1Data->imageData)), sourceImage->widthStep);
+	imageReadyFlag = ((int *)(&(PRUInterop1Data->imageReadyFlag)));
 	cvNamedWindow("main", CV_WINDOW_AUTOSIZE);
 	cvNamedWindow("mask", CV_WINDOW_AUTOSIZE);
 	while(key != 'x')
 	{
-		while(*g_DDRImageReadyFlag == 0x00000000);
+		while(*imageReadyFlag == IMAGE_NOT_READY);
 		cvInRangeS(sourceImage, cvScalar(60, 0, 100, 0), cvScalar(200, 80, 255, 0), maskImage);
 		cvMoments(maskImage, &moments, 0);
 		area = moments.m00;
@@ -64,10 +65,10 @@ int main (int argc, char *argv[])
 		}
 		cvShowImage("main", sourceImage);
 		cvShowImage("mask", maskImage);
-		*g_DDRImageReadyFlag = 0x00000000;
+		*imageReadyFlag = IMAGE_NOT_READY;
 		key = cvWaitKey(50);
 	}
-	cvReleaseImage(&sourceImage);
+	cvReleaseImageHeader(&sourceImage);
 	cvReleaseImage(&maskImage);
 	cvDestroyWindow("main");
 	cvDestroyWindow("mask");

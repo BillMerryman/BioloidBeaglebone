@@ -33,9 +33,12 @@
 #define IMAGE_COLUMNS_IN_INTS			IMAGE_COLUMNS_IN_INTS_RGB
 #define BYTES_PER_PIXEL 				BYTES_PER_PIXEL_RGB
 
+#define IMAGE_READY						0xFFFFFFFF
+#define IMAGE_NOT_READY					0x00000000
+
 typedef struct{
-	uint8_t imageData[IMAGE_COLUMNS_IN_BYTES][IMAGE_ROWS_IN_PIXELS];
-	uint8_t imageReadyFlag;
+	uint32_t imageData[IMAGE_COLUMNS_IN_INTS][IMAGE_ROWS_IN_PIXELS];
+	uint32_t imageReadyFlag;
 } PRU_INTEROP_1_DATA;
 
 #endif /* PRUINTEROP1_H_ */

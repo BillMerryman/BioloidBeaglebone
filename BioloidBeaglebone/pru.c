@@ -80,13 +80,14 @@ void configurePRU_0(const char *pruProgramTextFile, const char *pruProgramDataFi
 	int result;
 
 	result = prussdrv_load_datafile(0, pruProgramDataFile);
+	PRU_INTEROP_0_DATA* PRUInterop0Data = &(PRUInteropDataPhysical->PRUInterop0Data);
 
 	/* write the physical address of PRU external memory to the address of the pointer in PRU memory that the PRU will use to access it */
 
-//	((uint8_t *)pru0DataMemory)[PRU_INTEROP_0_DATA_POINTER_OFFSET + 0] = ((unsigned int)pruExternalMemoryPhysical >> 0) & 0xff;
-//	((uint8_t *)pru0DataMemory)[PRU_INTEROP_0_DATA_POINTER_OFFSET + 1] = ((unsigned int)pruExternalMemoryPhysical >> 8) & 0xff;
-//	((uint8_t *)pru0DataMemory)[PRU_INTEROP_0_DATA_POINTER_OFFSET + 2] = ((unsigned int)pruExternalMemoryPhysical >> 16) & 0xff;
-//	((uint8_t *)pru0DataMemory)[PRU_INTEROP_0_DATA_POINTER_OFFSET + 3] = ((unsigned int)pruExternalMemoryPhysical >> 24) & 0xff;
+	((uint8_t *)pru0DataMemory)[PRU_INTEROP_0_DATA_POINTER_OFFSET + 0] = ((unsigned int)PRUInterop0Data >> 0) & 0xff;
+	((uint8_t *)pru0DataMemory)[PRU_INTEROP_0_DATA_POINTER_OFFSET + 1] = ((unsigned int)PRUInterop0Data >> 8) & 0xff;
+	((uint8_t *)pru0DataMemory)[PRU_INTEROP_0_DATA_POINTER_OFFSET + 2] = ((unsigned int)PRUInterop0Data >> 16) & 0xff;
+	((uint8_t *)pru0DataMemory)[PRU_INTEROP_0_DATA_POINTER_OFFSET + 3] = ((unsigned int)PRUInterop0Data >> 24) & 0xff;
 
 	prussdrv_load_program(0, pruProgramTextFile);
 
@@ -108,23 +109,15 @@ void stopPRU_0()
 void configurePRU_1(const char *pruProgramTextFile, const char *pruProgramDataFile)
 {
 
-	/*
-	 *
-	 * Rewrite the configurePRU functions to be one configure function, one start function,
-	 * and one stop function, that takes the PRU number as an argument, and also takes an
-	 * optional DATA_POINTER_OFFSET supplied to the function. If supplied, it is used to
-	 * write back to PRU data memory. Otherwise it is skipped...
-	 *
-	 */
-
 	int result;
+	PRU_INTEROP_1_DATA* PRUInterop1Data = &(PRUInteropDataPhysical->PRUInterop1Data);
 
 	result = prussdrv_load_datafile(1, pruProgramDataFile);
 
-	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 0] = ((unsigned int)pruExternalMemoryPhysical >> 0) & 0xff;
-	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 1] = ((unsigned int)pruExternalMemoryPhysical >> 8) & 0xff;
-	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 2] = ((unsigned int)pruExternalMemoryPhysical >> 16) & 0xff;
-	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 3] = ((unsigned int)pruExternalMemoryPhysical >> 24) & 0xff;
+	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 0] = ((unsigned int)PRUInterop1Data >> 0) & 0xff;
+	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 1] = ((unsigned int)PRUInterop1Data >> 8) & 0xff;
+	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 2] = ((unsigned int)PRUInterop1Data >> 16) & 0xff;
+	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 3] = ((unsigned int)PRUInterop1Data >> 24) & 0xff;
 
 	prussdrv_load_program(1, pruProgramTextFile);
 

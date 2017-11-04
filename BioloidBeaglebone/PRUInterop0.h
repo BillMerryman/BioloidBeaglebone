@@ -12,9 +12,12 @@
 
 #include "motion.h"
 
+#define MOTION_PAGE_READY						0xFFFFFFFF
+#define MOTION_PAGE_NOT_READY					0x00000000
+
 typedef struct{
 	MOTION_PAGE motionPage;
-	uint8_t motionPageReadyFlag;
+	uint32_t motionPageReadyFlag;
 } PRU_INTEROP_0_DATA;
 
 #endif /* PRUINTEROP0_H_ */
