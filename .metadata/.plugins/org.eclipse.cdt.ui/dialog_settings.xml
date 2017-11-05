@@ -11,6 +11,7 @@
 		<item value="227191" key="searchFlags"/>
 		<item value="false" key="caseSensitive"/>
 		<list key="previousPatterns">
+			<item value="NULL"/>
 			<item value="getExternalMemoryVirtualPRU"/>
 		</list>
 	</section>

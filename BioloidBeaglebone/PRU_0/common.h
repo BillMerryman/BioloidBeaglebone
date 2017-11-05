@@ -22,13 +22,7 @@
 #define CLOCK_DEBUG
 #endif
 
-#include <hw_types.h>
-
 #define byte							uint8_t
-#define bool							tBoolean
-
-#define BB_LED_ON						HWREG(SOC_GPIO_1_REGS + GPIO_DATAOUT) |= (1 << 23)
-#define BB_LED_OFF						HWREG(SOC_GPIO_1_REGS + GPIO_DATAOUT) &= ~(1 << 23)
-#define BB_LED_TOGGLE					HWREG(SOC_GPIO_1_REGS + GPIO_DATAOUT) ^= (1 << 23)
+#define bool							unsigned char
 
 #endif /* COMMON_H_ */

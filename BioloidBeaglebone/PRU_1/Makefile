@@ -31,7 +31,8 @@ IPATH=	-I${SDK_ROOT}/include \
 PRUAPPDIR=${ROOT}/PRU_1
 PRUAPPNAME=PRU_1
 
-PRUAPPFILES = main.c 
+PRUAPPFILES = main.c \
+				image.c
 				
 CLPRU_FLAGS = --silicon_version=3 \
 				--c99 \

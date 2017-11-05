@@ -6,13 +6,10 @@
  */
 
 #include <stdint.h>
-#include <stddef.h>
 
-#include "soc_AM335x.h"
-#include "gpio_v2.h"
+#include "hw_types.h"  //This is where it is getting NULL from...
 
 #include "common.h"
-
 #include "uart.h"
 #include "dynamixels.h"
 

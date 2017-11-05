@@ -1,4 +1,4 @@
-22:02:27 **** Clean-only build of configuration Default for project BioloidBeaglebone ****
+20:06:36 **** Clean-only build of configuration Default for project BioloidBeaglebone ****
 make clean 
 MAKE -C PRU_0 clean
 MAKE[1]: Entering directory `D:/Programming/Robot/Bioloid/BioloidBeagleBone/BioloidBeaglebone/PRU_0'
@@ -9,5 +9,5 @@ make[1]: Leaving directory `D:/Programming/Robot/Bioloid/BioloidBeagleBone/Biolo
 rm -f ./*.o ./PRUInteropDataLocation.h
 rm -f BioloidBeaglebone
 
-22:02:27 Build Finished (took 508ms)
+20:06:36 Build Finished (took 194ms)
 

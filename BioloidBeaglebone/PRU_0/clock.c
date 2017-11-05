@@ -8,6 +8,7 @@
 #include <stdint.h>
 
 #include "common.h"
+#include "hw_types.h"
 #include "TI_Headers/pru_iep.h"
 #include "clock.h"
 

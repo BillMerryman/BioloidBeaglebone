@@ -7,8 +7,8 @@
 
 #include <inttypes.h>
 #include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+
+#include "hw_types.h"
 
 #include "common.h"
 #include "dynamixels.h"

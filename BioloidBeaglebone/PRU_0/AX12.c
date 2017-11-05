@@ -9,9 +9,6 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "soc_AM335x.h"
-#include "gpio_v2.h"
-
 #include "common.h"
 
 #include "uart.h"

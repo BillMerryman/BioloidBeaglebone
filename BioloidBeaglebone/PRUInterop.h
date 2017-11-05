@@ -8,8 +8,8 @@
 #ifndef PRUINTEROP_H_
 #define PRUINTEROP_H_
 
-#include "PRUInterop0.h"
-#include "PRUInterop1.h"
+#include "PRU_0/PRUInterop0.h"
+#include "PRU_1/PRUInterop1.h"
 
 typedef struct{
 	PRU_INTEROP_0_DATA PRUInterop0Data;

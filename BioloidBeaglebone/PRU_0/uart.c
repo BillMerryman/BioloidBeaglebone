@@ -7,9 +7,8 @@
 #include <stdint.h>
 
 #include "common.h"
+#include "hw_types.h"
 
-#include "soc_AM335x.h"
-#include "gpio_v2.h"
 #include "TI_Headers/pru_uart.h"
 
 #include "clock.h"

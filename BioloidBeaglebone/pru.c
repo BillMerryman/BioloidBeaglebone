@@ -16,7 +16,6 @@
 #include "prussdrv.h"
 #include "pruss_intc_mapping.h"
 
-#include "image.h"
 #include "pru.h"
 
 void *pruExternalMemoryVirtual;

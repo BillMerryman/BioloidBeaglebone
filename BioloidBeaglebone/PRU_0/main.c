@@ -1,8 +1,5 @@
 #include <stdint.h>
 
-#include "soc_AM335x.h"
-#include "gpio_v2.h"
-
 #include "dynamixels.h"
 #include "AX12.h"
 #include "AXS1.h"
@@ -10,7 +7,7 @@
 #include "clock.h"
 #include "motion.h"
 
-#include "../PRUInterop0.h"
+#include "PRUInterop0.h"
 
 #pragma NOINIT(PRUInterop0Data);
 PRU_INTEROP_0_DATA *PRUInterop0Data; //make noinit
