@@ -5,7 +5,6 @@
  *      Author: Bill
  */
 
-#include <inttypes.h>
 #include <string.h>
 
 #include "hw_types.h"

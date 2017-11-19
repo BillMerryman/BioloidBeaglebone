@@ -26,7 +26,6 @@
 #include "PRUInteropDataLocation.h"
 #include "PRUInterop.h"
 
-void *getExternalMemoryVirtualPRU();
 PRU_INTEROP_DATA *getPRUInteropData();
 void initializePRU(void);
 void configurePRU_0(const char *pruProgramTextFile, const char *pruProgramDataFile);

@@ -47,7 +47,11 @@ void main(){
 
 	while(1)
 	{
-		motionDoPage(1);
+		if(*motionPageReadyFlag == MOTION_PAGE_READY)
+		{
+			motionDoPage(1);
+			*motionPageReadyFlag = MOTION_PAGE_NOT_READY;
+		}
 		motionProcess();
 		AX12SetSyncInfoAll(AX12_TORQUE_ENABLE, AX12_GOAL_POSITION_H);
 		while(!clockTimedOut());

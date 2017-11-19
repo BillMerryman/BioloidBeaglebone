@@ -1,4 +1,4 @@
-20:06:36 **** Clean-only build of configuration Default for project BioloidBeaglebone ****
+13:19:12 **** Clean-only build of configuration Default for project BioloidBeaglebone ****
 make clean 
 MAKE -C PRU_0 clean
 MAKE[1]: Entering directory `D:/Programming/Robot/Bioloid/BioloidBeagleBone/BioloidBeaglebone/PRU_0'

@@ -26,11 +26,6 @@ void *pru1DataMemory;
 PRU_INTEROP_DATA *PRUInteropDataVirtual;
 PRU_INTEROP_DATA *PRUInteropDataPhysical;
 
-void *getExternalMemoryVirtualPRU()
-{
-	return pruExternalMemoryVirtual;
-}
-
 PRU_INTEROP_DATA *getPRUInteropData()
 {
 	return PRUInteropDataVirtual;
@@ -63,12 +58,16 @@ void initializePRU()
 	prussdrv_map_prumem(PRUSS0_PRU0_DATARAM, &pru0DataMemory);
 	prussdrv_map_prumem(PRUSS0_PRU1_DATARAM, &pru1DataMemory);
 
-	/* Map external memory */
+	/* Get the virtual address of the memory the PRUSS driver has allocated */
+	/* This will be used by the main application processor program */
 	prussdrv_map_extmem(&pruExternalMemoryVirtual);
+	/* Cast the PRUSS driver memory to an interop type */
 	PRUInteropDataVirtual = (PRU_INTEROP_DATA *)pruExternalMemoryVirtual;
 
-	/* Get a reference to the physical address of external memory the PRU driver has allocated */
+	/* Get the physical address of the memory the PRUSS driver has allocated */
+	/* This will be used by the program running on the PRUs */
 	pruExternalMemoryPhysical = (void *)prussdrv_get_phys_addr(pruExternalMemoryVirtual);
+	/* Cast the PRUSS driver memory to an interop type */
 	PRUInteropDataPhysical = (PRU_INTEROP_DATA *)pruExternalMemoryPhysical;
 
 }
@@ -79,6 +78,8 @@ void configurePRU_0(const char *pruProgramTextFile, const char *pruProgramDataFi
 	int result;
 
 	result = prussdrv_load_datafile(0, pruProgramDataFile);
+	if (result) errx(EXIT_FAILURE, "configurePRU_0 load data file failed\n");
+
 	PRU_INTEROP_0_DATA* PRUInterop0Data = &(PRUInteropDataPhysical->PRUInterop0Data);
 
 	/* write the physical address of PRU external memory to the address of the pointer in PRU memory that the PRU will use to access it */
@@ -88,7 +89,8 @@ void configurePRU_0(const char *pruProgramTextFile, const char *pruProgramDataFi
 	((uint8_t *)pru0DataMemory)[PRU_INTEROP_0_DATA_POINTER_OFFSET + 2] = ((unsigned int)PRUInterop0Data >> 16) & 0xff;
 	((uint8_t *)pru0DataMemory)[PRU_INTEROP_0_DATA_POINTER_OFFSET + 3] = ((unsigned int)PRUInterop0Data >> 24) & 0xff;
 
-	prussdrv_load_program(0, pruProgramTextFile);
+	result = prussdrv_load_program(0, pruProgramTextFile);
+	if (result) errx(EXIT_FAILURE, "configurePRU_0 load program file failed\n");
 
 }
 
@@ -112,6 +114,7 @@ void configurePRU_1(const char *pruProgramTextFile, const char *pruProgramDataFi
 	PRU_INTEROP_1_DATA* PRUInterop1Data = &(PRUInteropDataPhysical->PRUInterop1Data);
 
 	result = prussdrv_load_datafile(1, pruProgramDataFile);
+	if (result) errx(EXIT_FAILURE, "configurePRU_1 load data file failed\n");
 
 	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 0] = ((unsigned int)PRUInterop1Data >> 0) & 0xff;
 	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 1] = ((unsigned int)PRUInterop1Data >> 8) & 0xff;
@@ -119,6 +122,7 @@ void configurePRU_1(const char *pruProgramTextFile, const char *pruProgramDataFi
 	((uint8_t *)pru1DataMemory)[PRU_INTEROP_1_DATA_POINTER_OFFSET + 3] = ((unsigned int)PRUInterop1Data >> 24) & 0xff;
 
 	prussdrv_load_program(1, pruProgramTextFile);
+	if (result) errx(EXIT_FAILURE, "configurePRU_1 load program file failed\n");
 
 }
 

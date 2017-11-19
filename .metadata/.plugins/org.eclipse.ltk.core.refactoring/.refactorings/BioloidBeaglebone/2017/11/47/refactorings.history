@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;BioloidBeaglebone/motion.c&apos; to &apos;movement.c&apos;" description="Rename resource &apos;motion.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="motion.c" name="movement.c" stamp="1511113063633" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;BioloidBeaglebone/motion.h&apos; to &apos;movement.h&apos;" description="Rename resource &apos;motion.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="motion.h" name="movement.h" stamp="1511113074950" updateReferences="true"/>
+</session>

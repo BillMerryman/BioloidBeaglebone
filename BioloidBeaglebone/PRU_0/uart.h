@@ -8,6 +8,8 @@
 #ifndef UART_H_
 #define UART_H_
 
+#include "common.h"
+
 #define UART_BAUD_RATE_1M							12 //For 1 MBit
 
 //--- Servo Instruction ---

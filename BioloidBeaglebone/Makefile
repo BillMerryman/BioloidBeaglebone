@@ -37,7 +37,6 @@ OPENCV_LIBS = 	-lopencv_shape \
 # Other dependencies
 DEPS = \
  Makefile \
- image.h \
  pru.h \
  pruss_intc_mapping.h \
  prussdrv.h 
@@ -46,10 +45,9 @@ DEPS = \
 # Compiler object files 
 COBJ = \
  main.o \
- image.o \
  pru.o \
  prussdrv.o \
- motion.o
+ movement.o
 
 # gcc binaries to use
 CC = C:\gcc-linaro-arm-linux-gnueabihf\gcc-linaro-arm-linux-gnueabihf-4.8-2013.09_win32\bin\arm-linux-gnueabihf-gcc.exe

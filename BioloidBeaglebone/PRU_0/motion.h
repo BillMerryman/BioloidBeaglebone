@@ -8,7 +8,6 @@
 #ifndef MOTION_H_
 #define MOTION_H_
 
-#include <stdint.h>
 #include "common.h"
 
 #define MAX_MOTION_COMPONENTS				31
