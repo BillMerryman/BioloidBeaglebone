@@ -110,6 +110,7 @@ typedef enum{
 } servoState;
 
 void motionInitialize(void);
+bool motionPageReady(void);
 bool motionDoPage(byte pageNumber);
 bool motionDoPose(int pageNumber, int poseNumber);
 void motionLoadPage(byte pageNumber, MOTION_PAGE *page);

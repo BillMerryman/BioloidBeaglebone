@@ -47,7 +47,8 @@ COBJ = \
  main.o \
  pru.o \
  prussdrv.o \
- movement.o
+ movement.o \
+ imageProcessor.o
 
 # gcc binaries to use
 CC = C:\gcc-linaro-arm-linux-gnueabihf\gcc-linaro-arm-linux-gnueabihf-4.8-2013.09_win32\bin\arm-linux-gnueabihf-gcc.exe

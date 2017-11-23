@@ -7,18 +7,13 @@
 #include "clock.h"
 #include "motion.h"
 
-#include "PRUInterop0.h"
-
-#pragma NOINIT(PRUInterop0Data);
-PRU_INTEROP_0_DATA *PRUInterop0Data; //make noinit
-MOTION_PAGE *motionPage;
-volatile unsigned int *motionPageReadyFlag;
+/*
+ * From here we can either move everything over to the motion file and have everything done from
+ * there, or we can keep everything here and have the main loop check for an available motion,
+ * get the motion from main memory to the local memory
+ */
 
 void main(){
-
-	motionPage = &(PRUInterop0Data->motionPage);
-	motionPageReadyFlag = &(PRUInterop0Data->motionPageReadyFlag);
-	*motionPageReadyFlag = MOTION_PAGE_NOT_READY;
 
 	//Initialize AND ENABLE uart and clock so we can start talking
 	uartInitialize();
@@ -34,8 +29,6 @@ void main(){
 //	AXS1sInitialize();
 	motionInitialize();
 
-//	mainTestUart();
-
 //	follow up on dynamixelsIsType to catch errors and see if it is failing code-wise
 //  go through the receive function in uart and put an LED_ON in each of the possible
 //	failure cases to get an idea of how many we are seeing. maybe run a high velocity
@@ -47,10 +40,9 @@ void main(){
 
 	while(1)
 	{
-		if(*motionPageReadyFlag == MOTION_PAGE_READY)
+		if(motionPageReady())
 		{
 			motionDoPage(1);
-			*motionPageReadyFlag = MOTION_PAGE_NOT_READY;
 		}
 		motionProcess();
 		AX12SetSyncInfoAll(AX12_TORQUE_ENABLE, AX12_GOAL_POSITION_H);

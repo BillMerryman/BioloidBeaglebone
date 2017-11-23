@@ -16,7 +16,14 @@
 #include "clock.h"
 #include "motion.h"
 
+#include "PRUInterop0.h"
+
 #include "page_1.h"
+
+#pragma NOINIT(PRUInterop0Data);
+PRU_INTEROP_0_DATA *PRUInterop0Data; //make noinit
+MOTION_PAGE *motionPage;
+volatile unsigned int *motionPageReadyFlag;
 
 MOTION_PAGE currentPage;
 MOTION_PAGE nextPage;
@@ -33,9 +40,20 @@ sectionType bSection;
 
 void motionInitialize(void)
 {
+	motionPage = &(PRUInterop0Data->motionPage);
+	motionPageReadyFlag = &(PRUInterop0Data->motionPageReadyFlag);
+	*motionPageReadyFlag = MOTION_PAGE_NOT_READY;
 
 	memset((void *)&currentPage, 0, sizeof(MOTION_PAGE));
+}
 
+bool motionPageReady()
+{
+	if(*motionPageReadyFlag == MOTION_PAGE_READY)
+	{
+		return true;
+	}
+	return false;
 }
 
 bool motionDoPage(byte pageNumber)
@@ -102,15 +120,15 @@ bool motionDoPose(int pageNumber, int poseNumber)
 
 void motionLoadPage(byte pageNumber, MOTION_PAGE *page)
 {
-
-	byte *testPage = (byte *)page_1;
-	byte *pageInRam = (byte *)page;
+	//byte *sourcePage = (byte *)motionPage;
+	byte *sourcePage = (byte *)page_1;
+	byte *destinationPage = (byte *)page;
 
 	for(uint16_t counter = 0; counter < sizeof(MOTION_PAGE); counter++)
 	{
-		pageInRam[counter] = testPage[counter];
+		destinationPage[counter] = sourcePage[counter];
 	}
-
+	*motionPageReadyFlag = MOTION_PAGE_NOT_READY;
 }
 
 bool motionScenePlaying(void)
