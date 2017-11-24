@@ -18,12 +18,9 @@
 
 int main (int argc, char *argv[])
 {
-
-	//return motionLoadFile("/root/Desktop/FlexTest.mtn");
-
+	MOTION_PAGE *motionPage;
+	volatile unsigned int *motionPageReadyFlag;
 	int key = 0;
-
-	volatile int *motionPageReadyFlag;
 
 	initializePRU();
 	configurePRU_0("/root/Desktop/text_0.bin", "/root/Desktop/data_0.bin");
@@ -31,18 +28,27 @@ int main (int argc, char *argv[])
 	configurePRU_1("/root/Desktop/text_1.bin", "/root/Desktop/data_1.bin");
 	startPRU_1();
 
+	motionLoadFile("/root/Desktop/FlexTest.mtn");
 
 	PRU_INTEROP_0_DATA* PRUInterop0Data = &(getPRUInteropData()->PRUInterop0Data);
 	imageProcessorInitialize();
 
-	motionPageReadyFlag = ((int *)(&(PRUInterop0Data->motionPageReadyFlag)));
+	motionPage = &(PRUInterop0Data->motionPage);
+	motionPageReadyFlag = &(PRUInterop0Data->motionPageReadyFlag);
+	*motionPageReadyFlag = MOTION_PAGE_NOT_READY;
 
 	while(key != 'x')
 	{
 		imageProcessorProcess();
 		key = cvWaitKey(50);
-		if(key == 'm')
+		if(key == '1')
 		{
+			motionLoadPage(1, motionPage);
+			*motionPageReadyFlag = MOTION_PAGE_READY;
+		}
+		if(key == '2')
+		{
+			motionLoadPage(2, motionPage);
 			*motionPageReadyFlag = MOTION_PAGE_READY;
 		}
 	}

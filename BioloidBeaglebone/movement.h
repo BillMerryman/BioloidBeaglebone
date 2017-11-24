@@ -12,7 +12,7 @@
 
 #define MAX_MOTION_PAGES					128
 
-int motionLoadFile(const char *filename);
+void motionLoadFile(const char *filename);
 void motionLoadPage(byte pageNumber, MOTION_PAGE *page);
 
 #endif /* MOTION_H_ */

@@ -18,7 +18,7 @@
 
 #include "PRUInterop0.h"
 
-#include "page_1.h"
+//#include "page_1.h"
 
 #pragma NOINIT(PRUInterop0Data);
 PRU_INTEROP_0_DATA *PRUInterop0Data; //make noinit
@@ -120,8 +120,8 @@ bool motionDoPose(int pageNumber, int poseNumber)
 
 void motionLoadPage(byte pageNumber, MOTION_PAGE *page)
 {
-	//byte *sourcePage = (byte *)motionPage;
-	byte *sourcePage = (byte *)page_1;
+	byte *sourcePage = (byte *)motionPage;
+	//byte *sourcePage = (byte *)page_1;
 	byte *destinationPage = (byte *)page;
 
 	for(uint16_t counter = 0; counter < sizeof(MOTION_PAGE); counter++)
