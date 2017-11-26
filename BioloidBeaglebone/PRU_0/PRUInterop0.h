@@ -13,13 +13,13 @@
 
 #define MAX_MOTION_PAGES					128
 
-#define MOTION_PAGE_READY					0xFFFFFFFF
-#define MOTION_PAGE_NOT_READY				0x00000000
+#define MOTION_PAGE_READY					0xFF
+#define MOTION_PAGE_NOT_READY				0x00
 
 typedef struct{
 	MOTION_PAGE motionPages[MAX_MOTION_PAGES];
-	uint32_t motionPageReadyFlag;
-	uint32_t pageRequested;
+	uint8_t motionPageReadyFlag;
+	uint8_t pageRequested;
 } PRU_INTEROP_0_DATA;
 
 #endif /* PRUINTEROP0_H_ */

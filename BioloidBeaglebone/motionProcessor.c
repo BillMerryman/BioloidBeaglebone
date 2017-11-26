@@ -16,18 +16,16 @@
 
 PRU_INTEROP_0_DATA* PRUInterop0Data;
 MOTION_PAGE *motionPages;
-volatile unsigned int *motionPageReadyFlag;
-volatile unsigned int *pageRequested;
+volatile uint8_t *motionPageReadyFlag;
+volatile uint8_t *pageRequested;
 
 void motionProcessorInitialize()
 {
 
 	PRUInterop0Data = &(getPRUInteropData()->PRUInterop0Data);
-	motionPages = &(PRUInterop0Data->motionPages);
+	motionPages = PRUInterop0Data->motionPages;
 	motionPageReadyFlag = &(PRUInterop0Data->motionPageReadyFlag);
 	pageRequested = &(PRUInterop0Data->pageRequested);
-	*motionPageReadyFlag = MOTION_PAGE_NOT_READY;
-	*pageRequested = 0;
 
 	motionProcessorLoadFile("/root/Desktop/FlexTest.mtn");
 
@@ -60,18 +58,6 @@ void motionProcessorLoadFile(const char *filename)
 
 	return /*0*/;
 }
-
-//void motionLoadPage(byte pageNumber, MOTION_PAGE *page)
-//{
-//	byte *sourcePage = (byte *)(&motionPageFile[pageNumber]);
-//	byte *destinationPage = (byte *)page;
-//	uint16_t counter;
-//
-//	for(counter = 0; counter < sizeof(MOTION_PAGE); counter++)
-//	{
-//		destinationPage[counter] = sourcePage[counter];
-//	}
-//}
 
 
 

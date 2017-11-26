@@ -23,8 +23,8 @@
 #pragma NOINIT(PRUInterop0Data);
 PRU_INTEROP_0_DATA *PRUInterop0Data; //make noinit
 MOTION_PAGE *motionPages;
-volatile unsigned int *motionPageReadyFlag;
-volatile unsigned int *motionPageRequested;
+volatile uint8_t *motionPageReadyFlag;
+volatile uint8_t *motionPageRequested;
 
 MOTION_PAGE currentPage;
 MOTION_PAGE nextPage;
@@ -41,7 +41,7 @@ sectionType bSection;
 
 void motionInitialize(void)
 {
-	motionPages = &(PRUInterop0Data->motionPages);
+	motionPages = PRUInterop0Data->motionPages;
 	motionPageReadyFlag = &(PRUInterop0Data->motionPageReadyFlag);
 	motionPageRequested = &(PRUInterop0Data->pageRequested);
 	*motionPageReadyFlag = MOTION_PAGE_NOT_READY;
@@ -54,8 +54,7 @@ void motionPoll()
 {
 	if(*motionPageReadyFlag == MOTION_PAGE_READY)
 	{
-		if(*motionPageRequested == 1) motionDoPage(1);
-		if(*motionPageRequested == 2) motionDoPage(2);
+		motionDoPage(*motionPageRequested);
 		*motionPageReadyFlag = MOTION_PAGE_NOT_READY;
 		*motionPageRequested = 0;
 	}
@@ -123,10 +122,14 @@ bool motionDoPose(int pageNumber, int poseNumber)
 
 }
 
+/*
+ * This function is used both directly to initiate a page externally, and by
+ * the page processing function to load subsequent pages for a multi-page
+ * motion.
+ */
 void motionLoadPage(byte pageNumber, MOTION_PAGE *page)
 {
 	byte *sourcePage = (byte *)(&(motionPages[pageNumber]));
-	//byte *sourcePage = (byte *)page_1;
 	byte *destinationPage = (byte *)page;
 
 	for(uint16_t counter = 0; counter < sizeof(MOTION_PAGE); counter++)

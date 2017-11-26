@@ -58,6 +58,8 @@ bin:
 	@mv *.obj $(TARGET_MODE)
 	${PRU_SDK_ROOT}/bin/hexpru bin.cmd $(TARGET_MODE)/${PRUAPPNAME}.out
 	@mv *.bin $(TARGET_MODE) 
+	${SDK_ROOT}/tools/bintoc/bintocwitharrayname.exe $(TARGET_MODE)/${PRU_TEXT}.bin $(TARGET_MODE)/$(PRU_TEXT).h $(PRU_TEXT)
+	${SDK_ROOT}/tools/bintoc/bintocwitharrayname.exe $(TARGET_MODE)/${PRU_DATA}.bin $(TARGET_MODE)/$(PRU_DATA).h $(PRU_DATA)
 	copyPRUInteropDataLocation.bat
 
 clean:
