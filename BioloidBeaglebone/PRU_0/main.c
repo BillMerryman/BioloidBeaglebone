@@ -40,10 +40,7 @@ void main(){
 
 	while(1)
 	{
-		if(motionPageReady())
-		{
-			motionDoPage(1);
-		}
+		motionPoll();
 		motionProcess();
 		AX12SetSyncInfoAll(AX12_TORQUE_ENABLE, AX12_GOAL_POSITION_H);
 		while(!clockTimedOut());

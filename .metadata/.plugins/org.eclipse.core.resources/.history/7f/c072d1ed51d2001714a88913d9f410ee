@@ -1,0 +1,52 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 16, 2015
+ *      Author: Bill
+ */
+
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdint.h>
+
+#include "cv.h"
+#include "highgui.h"
+#include "pru.h"
+#include "pruInterop.h"
+#include "motionProcessor.h"
+#include "imageProcessor.h"
+
+int main (int argc, char *argv[])
+{
+
+	initializePRU();
+
+	motionProcessorInitialize();
+	imageProcessorInitialize();
+
+	configurePRU_0("/root/Desktop/text_0.bin", "/root/Desktop/data_0.bin");
+	startPRU_0();
+	configurePRU_1("/root/Desktop/text_1.bin", "/root/Desktop/data_1.bin");
+	startPRU_1();
+
+	while(key != 'x')
+	{
+		imageProcessorProcess();
+		key = cvWaitKey(50);
+		if(key == '1')
+		{
+			motionLoadPage(1, motionPage);
+			*motionPageReadyFlag = MOTION_PAGE_READY;
+		}
+		if(key == '2')
+		{
+			motionLoadPage(2, motionPage);
+			*motionPageReadyFlag = MOTION_PAGE_READY;
+		}
+	}
+
+	imageProcessorUninitialize();
+	stopPRU_0();
+	stopPRU_1();
+}

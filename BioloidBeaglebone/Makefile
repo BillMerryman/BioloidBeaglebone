@@ -47,7 +47,7 @@ COBJ = \
  main.o \
  pru.o \
  prussdrv.o \
- movement.o \
+ motionProcessor.o \
  imageProcessor.o
 
 # gcc binaries to use

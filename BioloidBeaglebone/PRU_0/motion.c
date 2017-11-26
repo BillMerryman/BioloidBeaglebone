@@ -22,8 +22,9 @@
 
 #pragma NOINIT(PRUInterop0Data);
 PRU_INTEROP_0_DATA *PRUInterop0Data; //make noinit
-MOTION_PAGE *motionPage;
+MOTION_PAGE *motionPages;
 volatile unsigned int *motionPageReadyFlag;
+volatile unsigned int *motionPageRequested;
 
 MOTION_PAGE currentPage;
 MOTION_PAGE nextPage;
@@ -40,20 +41,24 @@ sectionType bSection;
 
 void motionInitialize(void)
 {
-	motionPage = &(PRUInterop0Data->motionPage);
+	motionPages = &(PRUInterop0Data->motionPages);
 	motionPageReadyFlag = &(PRUInterop0Data->motionPageReadyFlag);
+	motionPageRequested = &(PRUInterop0Data->pageRequested);
 	*motionPageReadyFlag = MOTION_PAGE_NOT_READY;
+	*motionPageRequested = 0;
 
 	memset((void *)&currentPage, 0, sizeof(MOTION_PAGE));
 }
 
-bool motionPageReady()
+void motionPoll()
 {
 	if(*motionPageReadyFlag == MOTION_PAGE_READY)
 	{
-		return true;
+		if(*motionPageRequested == 1) motionDoPage(1);
+		if(*motionPageRequested == 2) motionDoPage(2);
+		*motionPageReadyFlag = MOTION_PAGE_NOT_READY;
+		*motionPageRequested = 0;
 	}
-	return false;
 }
 
 bool motionDoPage(byte pageNumber)
@@ -120,7 +125,7 @@ bool motionDoPose(int pageNumber, int poseNumber)
 
 void motionLoadPage(byte pageNumber, MOTION_PAGE *page)
 {
-	byte *sourcePage = (byte *)motionPage;
+	byte *sourcePage = (byte *)(&(motionPages[pageNumber]));
 	//byte *sourcePage = (byte *)page_1;
 	byte *destinationPage = (byte *)page;
 
@@ -128,7 +133,6 @@ void motionLoadPage(byte pageNumber, MOTION_PAGE *page)
 	{
 		destinationPage[counter] = sourcePage[counter];
 	}
-	*motionPageReadyFlag = MOTION_PAGE_NOT_READY;
 }
 
 bool motionScenePlaying(void)

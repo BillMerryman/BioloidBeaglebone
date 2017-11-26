@@ -1,5 +1,5 @@
 /*
- * ImageProcessor.c
+ * imageProcessor.c
  *
  *  Created on: Nov 19, 2017
  *      Author: Bill
@@ -10,9 +10,10 @@
 #include <stdio.h>
 #include <stdint.h>
 
+#include "imageProcessor.h"
 #include "cv.h"
 #include "highgui.h"
-#include "movement.h"
+//#include "motionProcessor.h"
 #include "pruInterop.h"
 #include "pru.h"
 

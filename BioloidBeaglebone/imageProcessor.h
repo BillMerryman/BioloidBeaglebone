@@ -8,10 +8,8 @@
 #ifndef IMAGEPROCESSOR_H_
 #define IMAGEPROCESSOR_H_
 
-
 void imageProcessorInitialize();
 void imageProcessorUninitialize();
 void imageProcessorProcess();
-
 
 #endif /* IMAGEPROCESSOR_H_ */
