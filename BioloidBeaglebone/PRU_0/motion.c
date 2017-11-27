@@ -18,13 +18,11 @@
 
 #include "PRUInterop0.h"
 
-//#include "page_1.h"
-
 #pragma NOINIT(PRUInterop0Data);
 PRU_INTEROP_0_DATA *PRUInterop0Data; //make noinit
 MOTION_PAGE *motionPages;
-volatile uint8_t *motionPageReadyFlag;
-volatile uint8_t *motionPageRequested;
+volatile uint8_t *motionInstruction;
+volatile uint8_t *motionArgument;
 
 MOTION_PAGE currentPage;
 MOTION_PAGE nextPage;
@@ -42,31 +40,38 @@ sectionType bSection;
 void motionInitialize(void)
 {
 	motionPages = PRUInterop0Data->motionPages;
-	motionPageReadyFlag = &(PRUInterop0Data->motionPageReadyFlag);
-	motionPageRequested = &(PRUInterop0Data->pageRequested);
-	*motionPageReadyFlag = MOTION_PAGE_NOT_READY;
-	*motionPageRequested = 0;
+	motionInstruction = &(PRUInterop0Data->motionInstruction);
+	motionArgument = &(PRUInterop0Data->motionArgument);
+	*motionInstruction = INST_NO_INST;
+	*motionArgument = 0;
 
 	memset((void *)&currentPage, 0, sizeof(MOTION_PAGE));
 }
 
-void motionPoll()
+void motionProcessInstruction()
 {
-	if(*motionPageReadyFlag == MOTION_PAGE_READY)
+	switch(*motionInstruction)
 	{
-		motionDoPage(*motionPageRequested);
-		*motionPageReadyFlag = MOTION_PAGE_NOT_READY;
-		*motionPageRequested = 0;
+		case INST_EXECUTE_MOTION_PAGE:
+			motionDoPage(*motionArgument);
+			*motionInstruction = INST_NO_INST;
+			*motionArgument = 0;
+			break;
+		case INST_BREAK_MOTION_PAGE:
+			motionSceneBreak();
+			*motionInstruction = INST_NO_INST;
+			break;
+		case INST_STOP_MOTION_PAGE:
+			motionSceneStop();
+			*motionInstruction = INST_NO_INST;
+			break;
 	}
+
 }
 
 bool motionDoPage(byte pageNumber)
 {
-
-	if(scenePlaying) return FALSE;
-
-	motionLoadPage(pageNumber, &currentPage);
-
+	if(!motionLoadPage(pageNumber, &currentPage)) return FALSE;
     if(currentPage.header.playCount == 0 || currentPage.header.poseCount == 0) return FALSE;
 
 	currentPoseIndex = 0;
@@ -86,16 +91,11 @@ bool motionDoPage(byte pageNumber)
 	scenePlaying = TRUE;
 
 	return TRUE;
-
 }
 
 bool motionDoPose(int pageNumber, int poseNumber)
 {
-
-	if(scenePlaying) return FALSE;
-
-	motionLoadPage(pageNumber, &currentPage);
-
+	if(!motionLoadPage(pageNumber, &currentPage)) return FALSE;
     if(currentPage.header.playCount == 0 || currentPage.header.poseCount == 0) return FALSE;
 
     currentPoseIndex = poseNumber;
@@ -119,7 +119,6 @@ bool motionDoPose(int pageNumber, int poseNumber)
 	scenePlaying = TRUE;
 
 	return TRUE;
-
 }
 
 /*
@@ -127,8 +126,9 @@ bool motionDoPose(int pageNumber, int poseNumber)
  * the page processing function to load subsequent pages for a multi-page
  * motion.
  */
-void motionLoadPage(byte pageNumber, MOTION_PAGE *page)
+bool motionLoadPage(byte pageNumber, MOTION_PAGE *page)
 {
+	if(scenePlaying) return FALSE;
 	byte *sourcePage = (byte *)(&(motionPages[pageNumber]));
 	byte *destinationPage = (byte *)page;
 
@@ -136,24 +136,25 @@ void motionLoadPage(byte pageNumber, MOTION_PAGE *page)
 	{
 		destinationPage[counter] = sourcePage[counter];
 	}
+	return TRUE;
 }
 
 bool motionScenePlaying(void)
 {
-
 	return scenePlaying;
-
 }
 
-sectionType motionGetSection(void)
+void motionSceneBreak(void)
 {
+	scenePlaying = FALSE;
+}
 
-	return bSection;
-
+void motionSceneStop(void)
+{
+	sceneStop = TRUE;
 }
 
 void motionProcess(void){
-
 	//////////////////// local variables
     byte slot;
     byte bID;
@@ -519,8 +520,6 @@ void motionProcess(void){
 				}
 			}
         }
-
     }
-
 }
 

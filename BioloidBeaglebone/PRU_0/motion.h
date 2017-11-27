@@ -110,12 +110,13 @@ typedef enum{
 } servoState;
 
 void motionInitialize(void);
-void motionPoll(void);
+void motionProcessInstruction(void);
 bool motionDoPage(byte pageNumber);
 bool motionDoPose(int pageNumber, int poseNumber);
-void motionLoadPage(byte pageNumber, MOTION_PAGE *page);
+bool motionLoadPage(byte pageNumber, MOTION_PAGE *page);
 bool motionScenePlaying(void);
-sectionType motionGetSection(void);
+void motionSceneBreak(void);
+void motionSceneStop(void);
 void motionProcess(void);
 
 #endif /* MOTION_H_ */
