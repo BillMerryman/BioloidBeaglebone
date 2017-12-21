@@ -14,8 +14,8 @@
 #include "highgui.h"
 #include "pru.h"
 #include "pruInterop.h"
-#include "motionProcessor.h"
-#include "imageProcessor.h"
+#include "motionManager.h"
+#include "visionManager.h"
 
 int main (int argc, char *argv[])
 {
@@ -29,17 +29,17 @@ int main (int argc, char *argv[])
 	configurePRU_1("/root/Desktop/text_1.bin", "/root/Desktop/data_1.bin");
 	startPRU_1();
 
-	motionProcessorInitialize();
-	imageProcessorInitialize();
+	motionManagerInitialize();
+	visionManagerInitialize();
 
 	while(key != 'x')
 	{
-		imageProcessorProcess();
-		motionProcessorProcess(key);
+		visionManagerProcess();
+		motionManagerProcess(key);
 		key = cvWaitKey(25);
 	}
 
-	imageProcessorUninitialize();
+	visionManagerUninitialize();
 	stopPRU_0();
 	stopPRU_1();
 }
