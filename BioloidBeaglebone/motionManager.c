@@ -1,8 +1,17 @@
-/*
- * motionManager.c
+/** @file motionManager.c
+ *  @brief Functions for managing motions.
+ *
+ *  These are the functions that: setup the pointers used to
+ *  communicate with the memory shared between the application processor and PRU,
+ *  place requests in the shared memory to the PRU motion worker, and to load a
+ *  motion file from the file system into the shared memory so the PRU motion worker
+ *  can retrieve and use them.
+ *
+ *  @author Bill Merryman
+ *  @bug No known bugs.
  *
  *  Created on: Nov 25, 2017
- *      Author: Bill
+ *
  */
 
 #include <stdio.h>

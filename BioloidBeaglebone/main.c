@@ -1,8 +1,15 @@
-/*
- * main.c
+/** @file main.c
+ *  @brief Initialization and system starting point.
+ *
+ *  Right now we just initialize the PRUs and loop through looking for keyboard input
+ *  to initiate a servo action (like playing a page), and taking a frame of video and
+ *  processing it with OpenCV color range matching and moments recognition.
+ *
+ *  @author Bill Merryman
+ *  @bug No known bugs.
  *
  *  Created on: Oct 16, 2015
- *      Author: Bill
+ *
  */
 
 #include <unistd.h>

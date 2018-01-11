@@ -1,0 +1,27 @@
+/** @file pru.h
+ *  @brief Function prototypes for initializing, loading, starting, and stopping a PRU.
+ *
+ *  These are the function prototypes that: initialize the PRU subsystem, load a program
+ *  compiled with the PRU C compiler into the program memory of a given PRU,
+ *  initiate execution of a program in a given PRU, and terminate execution of
+ *  a program in a given PRU.
+ *
+ *  @author Bill Merryman
+ *  @bug No known bugs.
+ *
+ *  Created on: Oct 29, 2017
+ *
+ */
+
+#ifndef PRUINTEROP_H_
+#define PRUINTEROP_H_
+
+#include "PRU_0/PRUInterop0.h"
+#include "PRU_1/PRUInterop1.h"
+
+typedef struct{
+	PRU_INTEROP_0_DATA PRUInterop0Data;
+	PRU_INTEROP_1_DATA PRUInterop1Data;
+} PRU_INTEROP_DATA;
+
+#endif /* PRUINTEROP_H_ */

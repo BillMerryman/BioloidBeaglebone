@@ -1,8 +1,18 @@
-/*
- * AX12.c
+/** @file AX12.c
+ *  @brief Functions for AX-12 device management.
+ *
+ *  These functions enumerate the AX-12 devices attached to the device. They create in
+ *  memory representations of them and manage them, taking the serialized values received
+ *  back from the serial bus and placing them appropriately in structures in memory, and
+ *  creating packets from those structures to be written out to the serial bus.
+ *
+ *  @author Bill Merryman
+ *  @bug There is a bug in AX12SetSyncInfoAll when the buffer array is sized dynamically, at
+ *  run time. Might be a result of being sized with an int. Currently coping with this by
+ *  setting the buffer statically to 256, which is as big as it can possibly be.
  *
  *  Created on: Dec 22, 2013
- *      Author: Bill
+ *
  */
 
 #include <stdint.h>

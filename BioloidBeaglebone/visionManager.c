@@ -1,8 +1,23 @@
-/*
- * visionManager.c
+/** @file visionManager.c
+ *  @brief Functions for managing images/vision.
+ *
+ *  These functions currently setup the pointers to where the PRU will write image data
+ *  and an image data ready flag, process and display the image data from the shared memory
+ *  in OpenCV windows, and garbage collect the image data when the program shuts down.
+ *  The image ready flag is a cheap way to deal with the fact
+ *  that the PRU can write data to the shared memory much faster than the application
+ *  processor can consume it. We will want to come up with a better way of working with images
+ *  on the application processor side. Image processing is currently just using OpenCV
+ *  cvInRangeS function to mask a certain color (aibo ball pink) and cvMoments to identify
+ *  instances of it in the image. The initialize function creates two windows, one for the
+ *  image and one for the thresholded mask. The main loop updates these windows when the image
+ *  ready flag is set.
+ *
+ *  @author Bill Merryman
+ *  @bug No known bugs.
  *
  *  Created on: Nov 19, 2017
- *      Author: Bill
+ *
  */
 
 #include <unistd.h>

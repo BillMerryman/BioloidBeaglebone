@@ -1,10 +1,17 @@
-/*
- * load.c
+/** @file pru.c
+ *  @brief Functions for initializing, loading, starting, and stopping a PRU.
+ *
+ *  These are the functions that: initialize the PRU subsystem, load a program
+ *  compiled with the PRU C compiler into the program memory of a given PRU,
+ *  initiate execution of a program in a given PRU, and terminate execution of
+ *  a program in a given PRU.
+ *
+ *  @author Bill Merryman
+ *  @bug No known bugs.
  *
  *  Created on: Sep 8, 2015
- *      Author: Bill
+ *
  */
-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -53,6 +60,11 @@ void initializePRU()
 	/* Disable PRUs */
 	prussdrv_pru_disable(0);
 	prussdrv_pru_disable(1);
+
+	/*
+	 * everything past here we will parcel out to the respective startup routines
+	 * so we can get rid of the global variables...
+	 */
 
 	/* assign addresses of PRU data memories to pointers */
 	prussdrv_map_prumem(PRUSS0_PRU0_DATARAM, &pru0DataMemory);
