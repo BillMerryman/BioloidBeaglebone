@@ -1,0 +1,25 @@
+/** @file clock.h
+ *  @brief Function prototypes for initializing, starting, and stopping a timer
+ *
+ *  These functions initialize, set the interval of, start, and stop the
+ *  Industrial Ethernet Peripheral (IEP) timer to be used to time the updating
+ *  of position information and transmitting that updated information to the attached AX-12s.
+ *
+ *  @author Bill Merryman
+ *  @bug No known bugs.
+ *
+ *  Created on: Jan 23, 2016
+ *
+ */
+
+#ifndef CLOCK_H_
+#define CLOCK_H_
+
+void clockInitialize(void);
+
+void clockSet(uint32_t interval);
+void clockStart(void);
+void clockStop(void);
+bool clockIsExpired(void);
+
+#endif /* CLOCK_H_ */

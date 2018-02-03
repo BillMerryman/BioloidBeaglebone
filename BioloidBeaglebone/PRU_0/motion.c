@@ -18,8 +18,6 @@
 
 #include "PRUInterop0.h"
 
-#pragma NOINIT(PRUInterop0Data);
-PRU_INTEROP_0_DATA *PRUInterop0Data; //make noinit
 MOTION_PAGE *motionPages;
 volatile uint8_t *motionInstruction;
 volatile uint8_t *motionArgument;
@@ -39,9 +37,9 @@ sectionType bSection;
 
 void motionInitialize(void)
 {
-	motionPages = PRUInterop0Data->motionPages;
-	motionInstruction = &(PRUInterop0Data->motionInstruction);
-	motionArgument = &(PRUInterop0Data->motionArgument);
+	motionPages = PRUInterop0GetMotionPages();
+	motionInstruction = PRUInterop0GetMotionInstruction();
+	motionArgument = PRUInterop0GetMotionArgument();
 	*motionInstruction = INST_NO_INST;
 	*motionArgument = 0;
 
@@ -53,9 +51,11 @@ void motionProcessInstruction()
 	switch(*motionInstruction)
 	{
 		case INST_EXECUTE_MOTION_PAGE:
-			motionDoPage(*motionArgument);
-			*motionInstruction = INST_NO_INST;
-			*motionArgument = 0;
+			if(motionDoPage(*motionArgument))
+			{
+				*motionInstruction = INST_NO_INST;
+				*motionArgument = 0;
+			}
 			break;
 		case INST_BREAK_MOTION_PAGE:
 			motionSceneBreak();

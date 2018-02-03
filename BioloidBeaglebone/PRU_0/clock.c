@@ -1,8 +1,15 @@
-/*
- * clock.c
+/** @file clock.c
+ *  @brief Functions for initializing, starting, and stopping a timer
+ *
+ *  These functions initialize, set the interval of, start, and stop the
+ *  Industrial Ethernet Peripheral (IEP) timer to be used to time the updating
+ *  of position information and transmitting that updated information to the attached AX-12s.
+ *
+ *  @author Bill Merryman
+ *  @bug No known bugs.
  *
  *  Created on: Jan 23, 2016
- *      Author: Bill
+ *
  */
 
 #include <stdint.h>
@@ -61,7 +68,7 @@ void clockStop(void)
 
 }
 
-bool clockTimedOut(void)
+bool clockIsExpired(void)
 {
 	if(CT_IEP.TMR_CMP_STS_bit.CMP_HIT & 0x01)
 	{

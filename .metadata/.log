@@ -13589,3 +13589,487 @@ org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File sys
 	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
 	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.rse.ui 4 0 2018-01-12 17:46:03.915
+!MESSAGE RSEG1058
+!STACK 0
+java.lang.Exception
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.logMessage(SystemMessageDialog.java:449)
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.open(SystemMessageDialog.java:459)
+	at org.eclipse.rse.internal.connectorservice.ssh.SshConnectorService$SessionLostHandler.run(SshConnectorService.java:332)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:140)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:611)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
+
+!ENTRY org.eclipse.cdt.launch.remote 4 150 2018-01-12 17:46:05.703
+!MESSAGE Error during file upload.
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:595)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:886)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.launch.remote 4 150 2018-01-12 17:46:05.703
+!MESSAGE Operation failed. File system input or output error
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:595)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:886)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.rse.ui 4 0 2018-01-12 18:03:13.429
+!MESSAGE RSEG1058
+!STACK 0
+java.lang.Exception
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.logMessage(SystemMessageDialog.java:449)
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.open(SystemMessageDialog.java:459)
+	at org.eclipse.rse.internal.connectorservice.ssh.SshConnectorService$SessionLostHandler.run(SshConnectorService.java:332)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:140)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:611)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
+
+!ENTRY org.eclipse.cdt.launch.remote 4 150 2018-01-12 18:03:14.852
+!MESSAGE Error during file upload.
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:595)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:886)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.launch.remote 4 150 2018-01-12 18:03:14.852
+!MESSAGE Operation failed. File system input or output error
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:595)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:886)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.rse.ui 4 0 2018-01-12 19:24:01.212
+!MESSAGE RSEG1058
+!STACK 0
+java.lang.Exception
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.logMessage(SystemMessageDialog.java:449)
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.open(SystemMessageDialog.java:459)
+	at org.eclipse.rse.internal.connectorservice.ssh.SshConnectorService$SessionLostHandler.run(SshConnectorService.java:332)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:140)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:611)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
+
+!ENTRY org.eclipse.cdt.launch.remote 4 150 2018-01-12 19:24:04.623
+!MESSAGE Error during file upload.
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:595)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:886)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.launch.remote 4 150 2018-01-12 19:24:04.623
+!MESSAGE Operation failed. File system input or output error
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:595)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:886)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.rse.ui 4 0 2018-01-12 20:52:21.161
+!MESSAGE RSEG1058
+!STACK 0
+java.lang.Exception
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.logMessage(SystemMessageDialog.java:449)
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.open(SystemMessageDialog.java:459)
+	at org.eclipse.rse.internal.connectorservice.ssh.SshConnectorService$SessionLostHandler.run(SshConnectorService.java:332)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:140)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:611)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
+
+!ENTRY org.eclipse.cdt.launch.remote 4 150 2018-01-12 20:52:22.615
+!MESSAGE Error during file upload.
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:595)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:886)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.launch.remote 4 150 2018-01-12 20:52:22.616
+!MESSAGE Operation failed. File system input or output error
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:595)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:886)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.rse.ui 4 0 2018-01-14 21:48:36.674
+!MESSAGE RSEG1058
+!STACK 0
+java.lang.Exception
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.logMessage(SystemMessageDialog.java:449)
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.open(SystemMessageDialog.java:459)
+	at org.eclipse.rse.internal.connectorservice.ssh.SshConnectorService$SessionLostHandler.run(SshConnectorService.java:332)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:140)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:611)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
+
+!ENTRY org.eclipse.cdt.launch.remote 4 150 2018-01-14 21:48:38.021
+!MESSAGE Error during file upload.
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:595)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:886)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.launch.remote 4 150 2018-01-14 21:48:38.021
+!MESSAGE Operation failed. File system input or output error
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:595)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:886)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.rse.ui 4 0 2018-01-16 21:00:41.776
+!MESSAGE RSEG1058
+!STACK 0
+java.lang.Exception
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.logMessage(SystemMessageDialog.java:449)
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.open(SystemMessageDialog.java:459)
+	at org.eclipse.rse.internal.connectorservice.ssh.SshConnectorService$SessionLostHandler.run(SshConnectorService.java:332)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:140)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:611)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
+
+!ENTRY org.eclipse.cdt.launch.remote 4 150 2018-01-16 21:00:44.035
+!MESSAGE Error during file upload.
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:600)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.getChannel(SftpFileService.java:547)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:858)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.launch.remote 4 150 2018-01-16 21:00:44.035
+!MESSAGE Operation failed. File system input or output error
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:600)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.getChannel(SftpFileService.java:547)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:858)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.rse.ui 4 0 2018-01-17 11:13:14.449
+!MESSAGE RSEG1058
+!STACK 0
+java.lang.Exception
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.logMessage(SystemMessageDialog.java:449)
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.open(SystemMessageDialog.java:459)
+	at org.eclipse.rse.internal.connectorservice.ssh.SshConnectorService$SessionLostHandler.run(SshConnectorService.java:332)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:140)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:611)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
+
+!ENTRY org.eclipse.cdt.launch.remote 4 150 2018-01-17 11:13:16.698
+!MESSAGE Error during file upload.
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:600)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.getChannel(SftpFileService.java:547)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:858)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.launch.remote 4 150 2018-01-17 11:13:16.698
+!MESSAGE Operation failed. File system input or output error
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:600)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.getChannel(SftpFileService.java:547)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:858)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.rse.ui 4 0 2018-02-03 11:40:53.674
+!MESSAGE RSEG1058
+!STACK 0
+java.lang.Exception
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.logMessage(SystemMessageDialog.java:449)
+	at org.eclipse.rse.ui.messages.SystemMessageDialog.open(SystemMessageDialog.java:459)
+	at org.eclipse.rse.internal.connectorservice.ssh.SshConnectorService$SessionLostHandler.run(SshConnectorService.java:332)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4145)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1113)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:997)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:140)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:611)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:567)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:354)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:181)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:636)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1450)
+
+!ENTRY org.eclipse.cdt.launch.remote 4 150 2018-02-03 11:40:55.393
+!MESSAGE Error during file upload.
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:595)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:886)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.launch.remote 4 150 2018-02-03 11:40:55.393
+!MESSAGE Operation failed. File system input or output error
+!STACK 0
+org.eclipse.rse.services.files.RemoteFileIOException: Operation failed. File system input or output error
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.makeSystemMessageException(SftpFileService.java:595)
+	at org.eclipse.rse.internal.services.ssh.files.SftpFileService.upload(SftpFileService.java:886)
+	at org.eclipse.cdt.launch.remote.RSEHelper.remoteFileDownload(RSEHelper.java:198)
+	at org.eclipse.cdt.launch.remote.launching.RemoteGdbLaunchDelegate.launch(RemoteGdbLaunchDelegate.java:77)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)

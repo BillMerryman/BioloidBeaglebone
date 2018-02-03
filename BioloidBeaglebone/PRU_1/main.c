@@ -5,8 +5,6 @@
 #define BANK_ADDRESS_FOR_LED_GPIOS		(SOC_GPIO_1_REGS)
 #define PIN_NUMBER_FOR_LED_3        	(24)
 
-#pragma NOINIT(PRUInterop1Data);
-PRU_INTEROP_1_DATA *PRUInterop1Data; //make noinit
 volatile unsigned int *imageReadyFlag;
 
 volatile register unsigned int __R31;
@@ -14,7 +12,7 @@ volatile register unsigned int __R31;
 int main()
 {
 	imageInitialize();
-	imageReadyFlag = &(PRUInterop1Data->imageReadyFlag);
+	imageReadyFlag = PRUInterop1GetImageReadyFlag();
 	*imageReadyFlag = IMAGE_NOT_READY;
 
     while(1)

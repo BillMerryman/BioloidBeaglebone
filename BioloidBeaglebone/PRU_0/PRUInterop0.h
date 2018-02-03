@@ -35,4 +35,8 @@ typedef struct{
 	 */
 } PRU_INTEROP_0_DATA;
 
+MOTION_PAGE* PRUInterop0GetMotionPages(void);
+uint8_t* PRUInterop0GetMotionInstruction(void);
+uint8_t* PRUInterop0GetMotionArgument(void);
+
 #endif /* PRUINTEROP0_H_ */

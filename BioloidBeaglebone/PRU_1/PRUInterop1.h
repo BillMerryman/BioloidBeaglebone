@@ -19,4 +19,7 @@ typedef struct{
 	uint32_t imageReadyFlag;
 } PRU_INTEROP_1_DATA;
 
+uint32_t *PRUInterop1GetImageData(void);
+uint32_t *PRUInterop1GetImageReadyFlag(void);
+
 #endif /* PRUINTEROP1_H_ */

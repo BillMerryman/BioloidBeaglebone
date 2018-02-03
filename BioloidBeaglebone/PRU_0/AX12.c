@@ -9,7 +9,9 @@
  *  @author Bill Merryman
  *  @bug There is a bug in AX12SetSyncInfoAll when the buffer array is sized dynamically, at
  *  run time. Might be a result of being sized with an int. Currently coping with this by
- *  setting the buffer statically to 256, which is as big as it can possibly be.
+ *  setting the buffer statically to 256, which is as big as it can possibly be. The issue
+ *  just causes the executable to be too big, so not really a bug, just prevents compiling
+ *  to a usable size...
  *
  *  Created on: Dec 22, 2013
  *

@@ -52,7 +52,7 @@ void visionManagerInitialize()
 	sourceImage = cvCreateImageHeader(inputSize, IPL_DEPTH_8U, 3);
 	maskImage = cvCreateImage(inputSize, IPL_DEPTH_8U, 1);
 	cvInitFont(&font, CV_FONT_HERSHEY_SIMPLEX, 0.5, 0.5, 0, 1, 8);
-	cvSetData(sourceImage, (void *)(&(PRUInterop1Data->imageData)), sourceImage->widthStep);
+	cvSetData(sourceImage, (void *)(PRUInterop1Data->imageData), sourceImage->widthStep);
 
 	imageReadyFlag = ((int *)(&(PRUInterop1Data->imageReadyFlag)));
 

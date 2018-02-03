@@ -37,7 +37,8 @@ PRUAPPFILES = main.c \
 				dynamixels.c \
 				AX12.c \
 				AXS1.c \
-				motion.c
+				motion.c \
+				PRUInterop0.c
 				
 CLPRU_FLAGS = --silicon_version=3 \
 				--c99 \

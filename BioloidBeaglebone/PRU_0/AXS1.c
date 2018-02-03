@@ -1,9 +1,17 @@
-/*
- * AXS1.c
+/** @file AXS1.c
+ *  @brief Functions for AX-S1 device management.
  *
- * Created: 1/12/2013 12:31:07 AM
- *  Author: MAIN
- */ 
+ *  These functions enumerate the AX-S1 devices attached to the device. They create in
+ *  memory representations of them and manage them, taking the serialized values received
+ *  back from the serial bus and placing them appropriately in structures in memory, and
+ *  creating packets from those structures to be written out to the serial bus.
+ *
+ *  @author Bill Merryman
+ *  @bug No known bugs.
+ *
+ *  Created on: 1/12/2013
+ *
+ */
 
 #include <stdio.h>
 #include <string.h>

@@ -32,7 +32,8 @@ PRUAPPDIR=${ROOT}/PRU_1
 PRUAPPNAME=PRU_1
 
 PRUAPPFILES = main.c \
-				image.c
+				image.c \
+				PRUInterop1.c
 				
 CLPRU_FLAGS = --silicon_version=3 \
 				--c99 \

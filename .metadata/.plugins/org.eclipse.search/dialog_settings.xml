@@ -3,9 +3,9 @@
 	<section name="DialogBounds_SearchDialog">
 		<item value="564" key="DIALOG_WIDTH"/>
 		<item value="40" key="DIALOG_Y_ORIGIN"/>
+		<item value="316" key="DIALOG_X_ORIGIN"/>
 		<item value="443" key="DIALOG_HEIGHT"/>
-		<item value="702" key="DIALOG_X_ORIGIN"/>
-		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|5|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="Search">
 		<list key="Search.processedPageIds">
@@ -25,11 +25,11 @@
 			<item value="org.eclipse.jdt.ui.JavaSearchPage"/>
 		</list>
 	</section>
-	<section name="org.eclipse.cdt.ui.pdomSearchViewPage">
-		<item value="true" key="showEnclosingDefinitions"/>
-	</section>
 	<section name="SearchDialog">
 		<item value="org.eclipse.cdt.ui.pdomSearchPage" key="PREVIOUS_PAGE"/>
+	</section>
+	<section name="org.eclipse.cdt.ui.pdomSearchViewPage">
+		<item value="true" key="showEnclosingDefinitions"/>
 	</section>
 	<section name="TextSearchPage">
 		<item value="false" key="CASE_SENSITIVE"/>
